@@ -1,0 +1,85 @@
+{
+  "r1": {
+    "direct_correct": 1,
+    "chain_correct": 13,
+    "n": 14
+  },
+  "r1_llm_note": "real-model results captured in llm_summary.json (shared R1-R3 sampling pass)",
+  "r1_chain_accuracy_across_seeds_1_40": {
+    "min": 9,
+    "max": 13,
+    "of": 14
+  },
+  "r2": {
+    "single_correct": 12,
+    "vote_correct": 14,
+    "n": 14,
+    "k": 9
+  },
+  "r3": {
+    "first_correct": 9,
+    "best_correct": 14,
+    "n_problems": 14,
+    "candidates": 8,
+    "rescued": [
+      "p03_bookbinder",
+      "p05_theatre_change",
+      "p09_cycling_club",
+      "p10_aquarium_tickets",
+      "p12_workshop_chairs"
+    ]
+  },
+  "r4": {
+    "greedy_solved": false,
+    "greedy_moves": 3,
+    "tree_solved": true,
+    "nodes_expanded": 10,
+    "solution_length": 7
+  },
+  "p1": {
+    "BFS": {
+      "plan_length": 6,
+      "nodes_expanded": 62,
+      "validated": true
+    },
+    "A*": {
+      "plan_length": 6,
+      "nodes_expanded": 21,
+      "validated": true
+    }
+  },
+  "p2": {
+    "planned_steps": 17,
+    "blind_failed": true,
+    "blind_steps": 10,
+    "monitor_steps": 21,
+    "replans": 1
+  },
+  "p3": {
+    "attempt1": [
+      false,
+      10
+    ],
+    "attempt2_memory": [
+      true,
+      10
+    ],
+    "control_no_memory": [
+      false,
+      10
+    ]
+  },
+  "p4": {
+    "p1_steps": 6,
+    "p1_layers": 6,
+    "p1_invalidated_from_mid": 2,
+    "fair_sequential_hours": 16,
+    "fair_parallel_hours": 5,
+    "fair_invalidated": [
+      "hang_posters",
+      "open_fair",
+      "set_up_stage",
+      "sound_check"
+    ]
+  }
+}

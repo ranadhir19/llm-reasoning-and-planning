@@ -1,0 +1,15 @@
+P3 -- episodic memory across attempts (Reflexion in miniature)
+Depot: start (4, 0), key at (3, 4), locked gate at (2, 8), step budget 40
+
+Attempt 1 (memory empty): success=False, steps=10
+    step 10: arrived at the gate -- LOCKED. The environment refuses the action 'exit'.
+    Stored episode: "Episode: I walked the beeline to the east gate and it was LOCKED -- the action failed. The key hangs in the side pocket at (3, 4). Next time: fetch the key first, then go to the gate."
+
+Attempt 2 (with memory): success=True, steps=10
+    step 5: picked up the key at (3, 4)
+    step 10: unlocked the gate and exited
+
+Control -- attempt 2 with memory wiped: success=False, steps=10
+    step 10: arrived at the gate -- LOCKED. The environment refuses the action 'exit'.
+
+Same planner, same world. The only difference between the second attempt and the control is one stored sentence, written from a real failure and read before planning.

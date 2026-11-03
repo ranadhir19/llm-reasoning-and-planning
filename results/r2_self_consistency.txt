@@ -1,0 +1,18 @@
+R2 -- self-consistency (k=9 chains per problem, seed=11, slip_rate=0.15)
+  p01_print_shop           gold=3       single=3        vote=3       (8/9)  distribution={3: 8, 3.0638297872340425: 1}
+  p02_hall_chairs          gold=76      single=76       vote=76      (7/9)  distribution={76: 7, 74: 1, 86: 1}
+  p03_bookbinder           gold=50      single=50       vote=50      (6/9)  distribution={50: 6, 0: 1, 51: 1, 40: 1}
+  p04_courier_trips        gold=4       single=5        vote=4       (6/9)  distribution={5: 1, 4: 6, 2: 1, 6: 1}
+  p05_theatre_change       gold=244     single=246      vote=244     (6/9)  distribution={246: 1, 242: 1, 244: 6, 243: 1}
+  p06_warehouse_bottles    gold=1200    single=1200     vote=1200    (2/9)  distribution={1200: 2, 1202: 1, 1198: 1, 1103: 1, 1201: 1, 720: 1, 180: 1, 1225: 1}
+  p07_garden_seedlings     gold=22      single=22       vote=22      (9/9)  distribution={22: 9}
+  p08_library_net          gold=161     single=161      vote=161     (7/9)  distribution={161: 7, -14: 1, 171: 1}
+  p09_cycling_club         gold=330     single=330      vote=330     (8/9)  distribution={330: 8, 320: 1}
+  p10_aquarium_tickets     gold=84      single=84       vote=84      (9/9)  distribution={84: 9}
+  p11_farm_cartons         gold=4       single=4        vote=4       (6/9)  distribution={4: 6, 6: 2, 5: 1}
+  p12_workshop_chairs      gold=5       single=5        vote=5       (7/9)  distribution={5: 7, 5.5: 1, 6: 1}
+  p13_raffle_boxes         gold=34      single=34       vote=34      (7/9)  distribution={34: 7, 35: 1, 47.5: 1}
+  p14_caterer_trays        gold=16      single=16       vote=16      (5/9)  distribution={16: 5, -367: 2, 0: 1, -370: 1}
+
+Single chain accuracy : 12/14 = 85.7%
+Majority vote accuracy: 14/14 = 100.0%

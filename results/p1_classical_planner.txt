@@ -1,0 +1,19 @@
+P1 -- classical planning in blocks world
+Initial: B on A, D on C (two stacks of two)
+Goal   : one tower -- D on C on B on A
+
+BFS : plan length 6, nodes expanded 62, simulation-validated: True
+     1. unstack(D,C)
+     2. putdown(D)
+     3. pickup(C)
+     4. stack(C,B)
+     5. pickup(D)
+     6. stack(D,C)
+
+A*  : plan length 6, nodes expanded 21, simulation-validated: True
+     1. unstack(D,C)
+     2. putdown(D)
+     3. pickup(C)
+     4. stack(C,B)
+     5. pickup(D)
+     6. stack(D,C)

@@ -1,0 +1,15 @@
+P4 -- plans as graphs
+
+Part A -- the P1 blocks-world plan as a causal graph:
+  6 steps; causal edges: 8; layers: 6
+  If step 4 (stack(C,B)) breaks, the graph invalidates exactly its 2 descendant step(s); the 3 steps before it provably stand, and only the broken step plus its descendants need redoing. A flat list cannot tell you that.
+
+Part B -- community-fair preparation (9 tasks):
+  layer 0: order_food, print_posters, recruit_volunteers, reserve_hall
+  layer 1: hang_posters, prep_kitchen, set_up_stage
+  layer 2: sound_check
+  layer 3: open_fair
+  Sequential time (the flat list): 16 h
+  Parallel time (critical path)  : 5 h
+  If 'reserve_hall' falls through, the graph invalidates 4 of 9 tasks: ['hang_posters', 'open_fair', 'set_up_stage', 'sound_check'].
+  The other 5 tasks stand untouched -- no replanning, no risk of redoing finished work.

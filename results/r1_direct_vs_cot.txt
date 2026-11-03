@@ -1,0 +1,27 @@
+R1 -- direct answer vs chain-of-thought (toy reasoner, seed=18, slip_rate=0.15)
+problem                     gold   direct    chain
+p01_print_shop                 3        6        3
+p02_hall_chairs               76      132       76
+p03_bookbinder                50     9216       50
+p04_courier_trips              4      182        4
+p05_theatre_change           244      988      244
+p06_warehouse_bottles       1200       22     1200
+p07_garden_seedlings          22       74       22
+p08_library_net              161       14      161
+p09_cycling_club             330      744      330
+p10_aquarium_tickets          84       84       84
+p11_farm_cartons               4      120        4
+p12_workshop_chairs            5     5184        2
+p13_raffle_boxes              34 2.526315789473684       34
+p14_caterer_trays             16      367       16
+
+Direct accuracy : 1/14 = 7.1%
+Chain accuracy  : 13/14 = 92.9%
+
+The designed failure, up close -- p02_hall_chairs:
+  A community hall has 14 rows of 16 chairs. For a concert, 148 chairs are filled. How many chairs are empty?
+  Direct mode grabs the two largest numbers it can see (148 and 16) and answers 132. The quantity it needs -- total chairs, 224 -- appears nowhere in the text; it has to be *constructed*.
+  Chain mode constructs it:
+  step 1: Total chairs = 224
+  step 2: Empty = total - filled = 76
+  Answer: 76

@@ -1,0 +1,19 @@
+R3 -- verifier reranking (best-of-8, seed=23, slip_rate=0.15)
+  p01_print_shop           gold=3       first=3        best-of-8=3       best score=(True, 2)
+  p02_hall_chairs          gold=76      first=76       best-of-8=76      best score=(True, 2)
+  p03_bookbinder           gold=50      first=52       best-of-8=50      best score=(True, 2)  <- verifier rescue
+  p04_courier_trips        gold=4       first=4        best-of-8=4       best score=(True, 2)
+  p05_theatre_change       gold=244     first=242      best-of-8=244     best score=(True, 3)  <- verifier rescue
+  p06_warehouse_bottles    gold=1200    first=1200     best-of-8=1200    best score=(True, 3)
+  p07_garden_seedlings     gold=22      first=22       best-of-8=22      best score=(True, 2)
+  p08_library_net          gold=161     first=161      best-of-8=161     best score=(True, 2)
+  p09_cycling_club         gold=330     first=36       best-of-8=330     best score=(True, 2)  <- verifier rescue
+  p10_aquarium_tickets     gold=84      first=86       best-of-8=84      best score=(True, 1)  <- verifier rescue
+  p11_farm_cartons         gold=4       first=4        best-of-8=4       best score=(True, 2)
+  p12_workshop_chairs      gold=5       first=6        best-of-8=5       best score=(True, 4)  <- verifier rescue
+  p13_raffle_boxes         gold=34      first=34       best-of-8=34      best score=(True, 3)
+  p14_caterer_trays        gold=16      first=16       best-of-8=16      best score=(True, 3)
+
+First-sample accuracy      : 9/14 = 64.3%
+Verifier best-of-8 accuracy : 14/14 = 100.0%
+Problems rescued by the verifier: ['p03_bookbinder', 'p05_theatre_change', 'p09_cycling_club', 'p10_aquarium_tickets', 'p12_workshop_chairs']

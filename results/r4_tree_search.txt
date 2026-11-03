@@ -1,0 +1,18 @@
+R4 -- river crossing: greedy chain vs tree search
+
+Greedy chain (no backwards steps): solved=False after 3 moves
+    farmer crosses with goat to the far bank
+    farmer crosses alone to the near bank
+    farmer crosses with wolf to the far bank
+    ...stuck: every remaining legal move either revisits a state or carries an item back -- and its one rule forbids exactly the move the solution needs.
+
+Tree search (BFS): solved=True nodes_expanded=10 solution_length=7
+    1. farmer crosses with goat to the far bank
+    2. farmer crosses alone to the near bank
+    3. farmer crosses with wolf to the far bank
+    4. farmer crosses with goat to the near bank
+    5. farmer crosses with cabbage to the far bank
+    6. farmer crosses alone to the near bank
+    7. farmer crosses with goat to the far bank
+
+The solution contains 1 'backwards' item-carrying move(s) -- the goat must be ferried back once. A linear chain that refuses to retreat can never find it; search can, because retreating is just another branch.

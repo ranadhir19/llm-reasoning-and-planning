@@ -1,0 +1,23 @@
+R1 -- direct answer vs chain-of-thought -- REAL MODEL (Qwen/Qwen2.5-0.5B-Instruct, CPU)
+seed=1234, k=9 chains/problem, temperature=0.7, max_new_tokens=256
+Generations are shared across R1/R2/R3 (one sampling pass).
+
+problem                     gold   direct  chain#1
+p01_print_shop                 3        1      240
+p02_hall_chairs               76       20       76
+p03_bookbinder                50        5      212
+p04_courier_trips              4       13        0
+p05_theatre_change           244      300      244
+p06_warehouse_bottles       1200       15      225
+p07_garden_seedlings          22       34       22
+p08_library_net              161       21        6
+p09_cycling_club             330       95      330
+p10_aquarium_tickets          84       94       84
+p11_farm_cartons               4        5        6
+p12_workshop_chairs            5        2        9
+p13_raffle_boxes              34       13       34
+p14_caterer_trays             16       25       29
+
+Direct accuracy       : 0/14 = 0.0%
+Single-chain accuracy : 6/14 = 42.9%
+Unparseable direct answers: 0

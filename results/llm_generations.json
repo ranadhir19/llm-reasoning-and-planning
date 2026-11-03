@@ -1,0 +1,688 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "seed": 1234,
+    "k": 9,
+    "temperature": 0.7,
+    "max_new_tokens": 256,
+    "direct_max_new_tokens": 48,
+    "direct_prompt_suffix": "\nAnswer with just the number.",
+    "cot_prompt_suffix": "\nThink step by step, then finish with the line 'Answer: <number>'.",
+    "problems": [
+      "p01_print_shop",
+      "p02_hall_chairs",
+      "p03_bookbinder",
+      "p04_courier_trips",
+      "p05_theatre_change",
+      "p06_warehouse_bottles",
+      "p07_garden_seedlings",
+      "p08_library_net",
+      "p09_cycling_club",
+      "p10_aquarium_tickets",
+      "p11_farm_cartons",
+      "p12_workshop_chairs",
+      "p13_raffle_boxes",
+      "p14_caterer_trays"
+    ]
+  },
+  "problems": [
+    {
+      "id": "p01_print_shop",
+      "text": "A print shop press prints 240 flyers per hour. An order needs 1,440 flyers, and the shop runs 2 presses at once on the order. How many hours does the order take?",
+      "gold": 3,
+      "direct": {
+        "raw": "To determine how many hours it takes for the shop to print 1,440 flyers using two presses simultaneously, we can follow these steps:\n\n1. **Calculate the total printing rate of one press:**\n   - One press prints",
+        "answer": 1
+      },
+      "chains": [
+        {
+          "raw": "To determine how long it takes for the order to be printed, we need to follow these steps:\n\n1. **Calculate the number of sets of 240 flyers needed to make 1,440 flyers:**\n   \\[\n   \\text{Number of sets} = \\frac{\\text{Total number of flyers}}{\\text{Fliers per set}} = \\frac{1440}{240}\n   \\]\n   Performing the division:\n   \\[\n   \\frac{1440}{240} = 6\n   \\]\n\n2. **Determine the time required for one set of printing:**\n   - The shop has two presses working simultaneously.\n   - Each press can print 240 flyers per hour.\n   - Therefore, together they can print \\(2 \\times 240\\) flyers per hour.\n\n3. **Calculate the total time required to print all 1,440 flyers in one set:**\n   \\[\n   \\text{Time per set} = \\frac{\\text{Total number of flyers}}{\\text{Fliers per set}} = \\frac{1440}{240}\n   \\]\n   Performing the division:\n   \\",
+          "answer": 240
+        },
+        {
+          "raw": "To determine how long it takes for the order to be printed using two presses simultaneously, we need to follow these steps:\n\n1. **Calculate the total number of flyers that can be printed in one hour by both presses combined:**\n   - Each press prints 240 flyers per hour.\n   - There are two presses working together.\n\n   Therefore, the total number of flyers printed per hour is:\n   \\[\n   240 \\text{ flyers/press} \\times 2 \\text{ presses} = 480 \\text{ flyers/hour}\n   \\]\n\n2. **Determine the time required to print all 1,440 flyers:**\n   - We know that 480 flyers can be printed per hour.\n   - The order requires 1,440 flyers.\n\n   To find out how many hours it will take to print 1,440 flyers, we divide the total number of flyers by the number of flyers printed per hour:\n   \\[\n   \\frac{1,440 \\text{ flyers}}{480 \\text{ flyers/hour}} = 3 \\text{ hours}\n   \\]\n\nTherefore, the order will take \\boxed{3} hours",
+          "answer": 3
+        },
+        {
+          "raw": "To determine how long it takes for the shop to print 1,440 flyers using two presses working together, we need to follow these steps:\n\n1. **Calculate the total number of flyers each press can print in one hour:**\n   - Each press prints 240 flyers per hour.\n\n2. **Determine the combined printing rate of both presses:**\n   - Since there are two presses, their combined printing rate is:\n     \\[\n     240 \\text{ flyers/hour} + 240 \\text{ flyers/hour} = 480 \\text{ flyers/hour}\n     \\]\n\n3. **Calculate the time required to print all 1,440 flyers:**\n   - To find out how long it will take to print 1,440 flyers, we divide the total number of flyers by the combined printing rate:\n     \\[\n     \\frac{1,440 \\text{ flyers}}{480 \\text{ flyers/hour}} = 3 \\text{ hours}\n     \\]\n\nTherefore, the order takes \\boxed{3} hours to complete.",
+          "answer": 3
+        },
+        {
+          "raw": "To determine how long it takes for the order to be printed using two presses simultaneously, we need to follow these steps:\n\n1. **Calculate the total number of flyers that can be printed in one minute:**\n   - The order requires 1,440 flyers.\n   - Since there are 60 minutes in an hour, we divide the total number of flyers by 60:\n     \\[\n     \\frac{1440}{60} = 24\n     \\]\n   - Therefore, each press can print 24 flyers per minute.\n\n2. **Determine the time required to print all 1,440 flyers:**\n   - If each press can print 24 flyers per minute, we need to find out how many minutes are required to print 1,440 flyers:\n     \\[\n     \\text{Time (in minutes)} = \\frac{1440 \\text{ flyers}}{24 \\text{ flyers/minute}}\n     \\]\n   - Simplify the division:\n     \\[\n     \\frac{1440}{24} = 60\n     \\]\n\n3. **Convert the time from minutes to hours:**\n   - There are",
+          "answer": 3
+        },
+        {
+          "raw": "To determine how long it will take for the order to be completed using two presses simultaneously, we need to follow these steps:\n\n1. **Calculate the total number of flyers that can be printed in one hour by both presses combined:**\n   - Each press prints 240 flyers per hour.\n   - Since there are two presses working together:\n     \\[\n     \\text{Total flyers per hour} = 2 \\times 240 = 480 \\text{ flyers}\n     \\]\n\n2. **Determine how many hours it takes to print all 1,440 flyers:**\n   - We need to divide the total number of flyers by the number of flyers each press can print per hour:\n     \\[\n     \\text{Hours required} = \\frac{\\text{Total flyers}}{\\text{Flyers per hour}} = \\frac{1440}{480}\n     \\]\n   - Perform the division:\n     \\[\n     \\frac{1440}{480} = 3\n     \\]\n\nTherefore, the order will take 3 hours to be completed.\n\n\\[\n\\boxed{3}\n\\]",
+          "answer": 3
+        },
+        {
+          "raw": "To determine how long it takes for the shop to print 1,440 flyers using two presses working simultaneously, we can follow these steps:\n\n1. **Calculate the number of flyers each press can print in one hour:**\n   - The shop has 2 presses.\n   - Each press prints 240 flyers per hour.\n\n2. **Determine the total number of flyers printed per press per hour:**\n   \\[\n   240 \\text{ flyers/press} \\times 2 = 480 \\text{ flyers/press/hour}\n   \\]\n\n3. **Calculate the total number of flyers needed to be printed:**\n   - The order requires 1,440 flyers.\n\n4. **Calculate the time required to print all 1,440 flyers:**\n   \\[\n   \\frac{1440 \\text{ flyers}}{480 \\text{ flyers/press/hour}} = 3 \\text{ hours}\n   \\]\n\nTherefore, the order will take 3 hours to complete.\n\n**Final Answer:** 3 hours",
+          "answer": 3
+        },
+        {
+          "raw": "To determine how long it takes for the shop to print all 1,440 flyers using two presses working together, we need to follow these steps:\n\n1. **Calculate the combined printing rate of both presses:**\n   - Each press can print 240 flyers per hour.\n   - With two presses working together, their combined printing rate is:\n     \\[\n     2 \\times 240 = 480 \\text{ flyers per hour}\n     \\]\n\n2. **Determine the time required to print all 1,440 flyers:**\n   - We need to find out how many hours it will take to print 1,440 flyers at a rate of 480 flyers per hour.\n   - This can be calculated by dividing the total number of flyers by the combined printing rate:\n     \\[\n     \\frac{1440}{480} = 3 \\text{ hours}\n     \\]\n\nTherefore, the order takes 3 hours to complete.\n\n**Final Answer:** 3 hours.",
+          "answer": 3
+        },
+        {
+          "raw": "To determine how long it takes for the order to be printed using two presses simultaneously, we need to follow these steps:\n\n1. **Calculate the total number of flyers that can be printed in one hour:**\n   - The print shop press prints 240 flyers per hour.\n\n2. **Determine the total number of flyers needed:**\n   - The order requires 1,440 flyers.\n\n3. **Calculate the time required to print all the flyers:**\n   - To find out how long it will take to print 1,440 flyers at a rate of 240 flyers per hour, we use the formula:\n     \\[\n     \\text{Time (in hours)} = \\frac{\\text{Total number of flyers}}{\\text{Number of flyers per hour}}\n     \\]\n   - Plugging in the values:\n     \\[\n     \\text{Time} = \\frac{1440}{240}\n     \\]\n\n4. **Perform the division:**\n   \\[\n   \\text{Time} = 6\n   \\]\n\nTherefore, it takes 6 hours for the order to be printed using two presses at once. \n\n**Answer:** 6 hours",
+          "answer": 6
+        },
+        {
+          "raw": "To determine how long it will take for the shop to produce 1,440 flyers using two presses working together, we need to follow these steps:\n\n1. **Determine the combined printing rate of one press:**\n   - One press prints 240 flyers per hour.\n\n2. **Calculate the total number of presses required:**\n   - Since there are two presses working simultaneously:\n     \\[\n     \\text{Number of presses} = 2\n     \\]\n\n3. **Calculate the time required to produce 1,440 flyers:**\n   - To find out how many hours it takes to produce 1,440 flyers, divide the total number of flyers by the combined printing rate of the presses:\n     \\[\n     \\text{Time (in hours)} = \\frac{\\text{Total number of flyers}}{\\text{Combined printing rate}}\n     \\]\n     \\[\n     \\text{Time (in hours)} = \\frac{1440}{240}\n     \\]\n\n4. **Perform the division:**\n   \\[\n   \\text{Time (in hours)} = 6\n   \\]\n\nTherefore, the order will take 6 hours to complete.\n\n**Final Answer:**",
+          "answer": 6
+        }
+      ]
+    },
+    {
+      "id": "p02_hall_chairs",
+      "text": "A community hall has 14 rows of 16 chairs. For a concert, 148 chairs are filled. How many chairs are empty?",
+      "gold": 76,
+      "direct": {
+        "raw": "20",
+        "answer": 20
+      },
+      "chains": [
+        {
+          "raw": "To determine how many chairs are empty in the community hall after the concert, we need to follow these steps:\n\n1. Calculate the total number of chairs in the hall.\n2. Subtract the number of chairs that were filled from the total number of chairs.\n\n**Step 1: Calculate the total number of chairs**\n\nThe community hall has 14 rows of chairs, and each row contains 16 chairs. Therefore, the total number of chairs is:\n\\[\n14 \\text{ rows} \\times 16 \\text{ chairs per row} = 224 \\text{ chairs}\n\\]\n\n**Step 2: Subtract the number of filled chairs from the total number of chairs**\n\nAfter the concert, 148 chairs are filled. To find out how many chairs are left empty, we subtract the number of filled chairs from the total number of chairs:\n\\[\n224 \\text{ chairs} - 148 \\text{ filled chairs} = 76 \\text{ empty chairs}\n\\]\n\nThus, the number of empty chairs is:\n\\[\n\\boxed{76}\n\\]",
+          "answer": 76
+        },
+        {
+          "raw": "To determine how many chairs are empty in the community hall after 148 chairs have been filled, we need to follow these steps:\n\n1. Calculate the total number of chairs in the community hall.\n2. Subtract the number of filled chairs from the total number of chairs.\n\n**Step 1: Calculate the total number of chairs in the community hall.**\n\nThe community hall has 14 rows of chairs and each row contains 16 chairs. Therefore, the total number of chairs is:\n\\[ 14 \\text{ rows} \\times 16 \\text{ chairs/row} = 224 \\text{ chairs} \\]\n\n**Step 2: Subtract the number of filled chairs from the total number of chairs.**\n\nAfter 148 chairs have been filled, the number of empty chairs is:\n\\[ 224 \\text{ chairs} - 148 \\text{ filled chairs} = 76 \\text{ empty chairs} \\]\n\nThus, the answer is:\n\\[ \\boxed{76} \\]",
+          "answer": 76
+        },
+        {
+          "raw": "To determine how many chairs are empty in the community hall after 148 chairs have been filled, we can follow these steps:\n\n1. Calculate the total number of chairs available initially.\n2. Subtract the number of chairs that were filled from the total number of chairs.\n\n**Step-by-Step Calculation:**\n\n1. **Calculate the total number of chairs initially:**\n   - There are 14 rows of chairs.\n   - Each row contains 16 chairs.\n   \\[\n   \\text{Total number of chairs} = 14 \\times 16 = 224\n   \\]\n\n2. **Subtract the number of chairs that were filled from the total number of chairs:**\n   - The problem states that 148 chairs were filled.\n   \\[\n   \\text{Chairs filled} = 148\n   \\]\n   \\[\n   \\text{Chairs remaining} = 224 - 148 = 76\n   \\]\n\nTherefore, the number of empty chairs is:\n\\[\n\\boxed{76}\n\\]",
+          "answer": 76
+        },
+        {
+          "raw": "To determine how many chairs are empty in the community hall after the concert, we can follow these steps:\n\n1. **Calculate the total number of chairs initially**:\n   The community hall has 14 rows and each row contains 16 chairs.\n   \\[\n   \\text{Total number of chairs} = 14 \\times 16 = 224\n   \\]\n\n2. **Determine the number of chairs that are filled during the concert**:\n   According to the problem, 148 chairs are filled.\n\n3. **Calculate the number of empty chairs**:\n   To find the number of empty chairs, subtract the number of filled chairs from the total number of chairs.\n   \\[\n   \\text{Number of empty chairs} = \\text{Total number of chairs} - \\text{Number of filled chairs}\n   \\]\n   Substituting the values we have:\n   \\[\n   \\text{Number of empty chairs} = 224 - 148 = 76\n   \\]\n\nTherefore, the number of empty chairs is $\\boxed{76}$.",
+          "answer": 76
+        },
+        {
+          "raw": "To determine how many chairs are empty in the community hall, we need to follow these steps:\n\n1. Calculate the total number of chairs in the hall.\n2. Subtract the number of filled chairs from the total number of chairs.\n\nFirst, let's calculate the total number of chairs in the hall:\n\\[\n14 \\text{ rows} \\times 16 \\text{ chairs per row} = 224 \\text{ chairs}\n\\]\n\nNext, we subtract the number of filled chairs (which is given as 148) from the total number of chairs:\n\\[\n224 \\text{ chairs} - 148 \\text{ filled chairs} = 76 \\text{ empty chairs}\n\\]\n\nTherefore, the number of empty chairs is:\n\\[\n\\boxed{76}\n\\]",
+          "answer": 76
+        },
+        {
+          "raw": "To determine how many chairs are empty in the community hall after the concert, we need to follow these steps:\n\n1. Calculate the total number of chairs initially.\n2. Subtract the number of chairs that were filled from the initial total.\n\n**Step 1: Calculate the total number of chairs initially**\n\nThe community hall has 14 rows of chairs, and each row contains 16 chairs. Therefore, the total number of chairs is:\n\\[ 14 \\text{ rows} \\times 16 \\text{ chairs per row} = 224 \\text{ chairs} \\]\n\n**Step 2: Subtract the number of chairs that were filled from the initial total**\n\nAfter the concert, 148 chairs were filled. To find out how many chairs are left empty, we subtract the number of filled chairs from the total number of chairs:\n\\[ 224 \\text{ chairs} - 148 \\text{ chairs} = 76 \\text{ chairs} \\]\n\nTherefore, the number of empty chairs is \\(\\boxed{76}\\).",
+          "answer": 76
+        },
+        {
+          "raw": "To determine how many chairs are empty in the community hall after the concert, we need to follow these steps:\n\n1. Calculate the total number of chairs in the hall.\n2. Subtract the number of chairs that were filled from the total number of chairs.\n\nFirst, let's calculate the total number of chairs:\n\\[\n14 \\text{ rows} \\times 16 \\text{ chairs per row} = 224 \\text{ chairs}\n\\]\n\nNext, subtract the number of chairs that were filled from the total number of chairs:\n\\[\n224 \\text{ chairs} - 148 \\text{ filled chairs} = 76 \\text{ empty chairs}\n\\]\n\nTherefore, the number of empty chairs is:\n\\[\n\\boxed{76}\n\\]",
+          "answer": 76
+        },
+        {
+          "raw": "To determine how many chairs are empty in the community hall after the concert, we need to follow these steps:\n\n1. **Calculate the total number of chairs available:**\n   - The community hall has 14 rows.\n   - Each row contains 16 chairs.\n   \\[\n   \\text{Total number of chairs} = 14 \\times 16\n   \\]\n\n2. **Perform the multiplication:**\n   \\[\n   14 \\times 16 = 224\n   \\]\n   So, there are 224 chairs in total.\n\n3. **Determine the number of full rows occupied:**\n   - The concert is held in 14 rows.\n   - The concert is fully occupied (filled) at 148 chairs.\n   \n4. **Calculate the number of empty seats:**\n   - Subtract the number of occupied chairs from the total number of chairs:\n   \\[\n   \\text{Number of empty chairs} = \\text{Total number of chairs} - \\text{Occupied chairs}\n   \\]\n   \\[\n   \\text{Number of empty chairs} = 224 - 148\n   \\]\n\n5. **Perform the subtraction:",
+          "answer": 5
+        },
+        {
+          "raw": "To determine how many chairs are empty in the community hall after 148 chairs have been filled, we can follow these steps:\n\n1. **Calculate the total number of chairs in the community hall:**\n   The community hall has 14 rows and each row contains 16 chairs.\n   \\[\n   \\text{Total number of chairs} = 14 \\times 16 = 224\n   \\]\n\n2. **Determine the number of chairs that were actually used for the concert:**\n   We know that 148 chairs were filled.\n\n3. **Calculate the number of empty chairs:**\n   To find the number of empty chairs, subtract the number of chairs filled from the total number of chairs:\n   \\[\n   \\text{Number of empty chairs} = \\text{Total number of chairs} - \\text{Chairs filled}\n   \\]\n   Substituting the values we have:\n   \\[\n   \\text{Number of empty chairs} = 224 - 148 = 76\n   \\]\n\nTherefore, the number of empty chairs is \\( \\boxed{76} \\).",
+          "answer": 76
+        }
+      ]
+    },
+    {
+      "id": "p03_bookbinder",
+      "text": "A bookbinder is binding a 288-page book that is gathered in signatures of 32 pages. Binding one book takes 6 minutes of sewing and 4 minutes of gluing. How many minutes does it take to bind 5 books?",
+      "gold": 50,
+      "direct": {
+        "raw": "To determine how long it takes to bind 5 books, we need to calculate the total time required for each book and then multiply by 5.\n\nFirst, let's find out how much time is needed to bind one book:\n- Sew",
+        "answer": 5
+      },
+      "chains": [
+        {
+          "raw": "To determine how long it takes to bind 5 books, we need to break down the process into its individual components: sewing time and gluing time.\n\n1. **Sewing Time**:\n   - Each book has 32 pages.\n   - Sewing one page takes 6 minutes.\n   - Therefore, for 32 pages, the total sewing time is \\( 32 \\text{ pages} \\times 6 \\text{ minutes/page} = 192 \\text{ minutes} \\).\n\n2. **Gluing Time**:\n   - There are 5 books, so there will be 5 glue sessions.\n   - Glueing each session takes 4 minutes.\n   - Therefore, the total glue time is \\( 5 \\text{ sessions} \\times 4 \\text{ minutes/session} = 20 \\text{ minutes} \\).\n\n3. **Total Binding Time**:\n   - The total binding time is the sum of the sewing time and the glue time.\n   - Total binding time = Sewing time + Gluing time = \\( 192 \\text{ minutes} + 20 \\text{ minutes} = 212 \\text{ minutes} \\).\n\nThus, the total",
+          "answer": 212
+        },
+        {
+          "raw": "To determine how long it takes to bind 5 books, we need to consider both the time spent sewing and the time spent gluing for each book.\n\n1. **Time spent sewing per book**: 6 minutes.\n   - There are 32 pages in a book.\n   - Therefore, the number of pages sewn per book is \\( \\frac{32}{6} = \\frac{16}{3} \\approx 5.33 \\) pages.\n   - Since sewing is typically done in whole numbers, we can assume that each book gets an integer amount of pages sewn (e.g., 5 pages).\n\n2. **Time spent gluing per book**: 4 minutes.\n   - The total number of pages in a book is 32.\n   - Therefore, the number of pages glued per book is \\( \\frac{32}{4} = 8 \\) pages.\n   - Similarly, since gluing is typically done in whole numbers, we can assume that each book gets an integer amount of pages glued (e.g., 8 pages).\n\n3. **Total pages bound per book**: \\( 32 + 8 = 40 \\) pages.\n   - Each page requires 6 minutes of",
+          "answer": 6
+        },
+        {
+          "raw": "To determine how long it takes to bind 5 books, we need to break down the problem into smaller steps.\n\n1. **Determine the total time for one book:**\n   - It takes 6 minutes to sew one page.\n   - It takes 4 minutes to glue one page.\n   - Therefore, the total time to sew one page plus the glue is \\(6 + 4 = 10\\) minutes.\n\n2. **Calculate the total number of pages in 5 books:**\n   - Each book has 32 pages.\n   - So, 5 books will have \\(5 \\times 32 = 160\\) pages.\n\n3. **Determine the total time to bind all 160 pages:**\n   - Since each page takes 10 minutes to sew and glue, the total time for 160 pages is \\(160 \\times 10 = 1600\\) minutes.\n\nTherefore, the answer is:\n\\[\n\\boxed{1600}\n\\]",
+          "answer": 1600
+        },
+        {
+          "raw": "To determine how long it takes to bind 5 books, we need to consider both the time spent on sewing and gluing for each book.\n\n1. **Time spent on sewing per book**: The problem states that sewing takes 6 minutes.\n2. **Time spent on gluing per book**: The problem also states that gluing takes 4 minutes.\n3. **Total sewing and gluing time per book**: To find the total time for one book, we add the sewing and gluing times together:\n   \\[\n   6 \\text{ minutes (sewing)} + 4 \\text{ minutes (gluing)} = 10 \\text{ minutes}\n   \\]\n4. **Total sewing and gluing time for 5 books**: Since each book requires 10 minutes of work, the total time for 5 books is:\n   \\[\n   10 \\text{ minutes/book} \\times 5 \\text{ books} = 50 \\text{ minutes}\n   \\]\n\nTherefore, the total time required to bind 5 books is \\(\\boxed{50}\\) minutes.",
+          "answer": 50
+        },
+        {
+          "raw": "To determine how long it takes to bind 5 books, we need to break down the problem into smaller steps:\n\n1. **Calculate the total number of pages bound per book:**\n   - Each book has 32 pages.\n   - The binding process includes both sewing and gluing.\n   - Sewing takes 6 minutes per book, and gluing also takes 4 minutes per book.\n\n   Therefore, the time spent on binding each page (including sewing and gluing) is:\n   \\[\n   6 + 4 = 10 \\text{ minutes per page}\n   \\]\n\n2. **Calculate the total number of pages bound per book:**\n   - Since there are 32 pages in each book, the total number of pages bound per book is:\n   \\[\n   32 \\times 10 = 320 \\text{ pages}\n   \\]\n\n3. **Determine the total number of pages for 5 books:**\n   - If each book has 320 pages, then for 5 books, the total number of pages is:\n   \\[\n   5 \\times 320 = 1600 \\text{ pages}\n   \\]\n\n4. **Calculate",
+          "answer": 4
+        },
+        {
+          "raw": "To determine how long it takes to bind 5 books, we need to break down the process into smaller steps and calculate the total time required.\n\n1. **Calculate the total number of pages each book contains:**\n   - Each book has 32 pages.\n   - There are 5 books.\n   \\[\n   \\text{Total pages per book} = 32 \\text{ pages/book} \\times 5 \\text{ books} = 160 \\text{ pages}\n   \\]\n\n2. **Determine the total number of pages in all five books combined:**\n   - Since there are 5 books, the total number of pages is:\n   \\[\n   \\text{Total pages} = 160 \\text{ pages/book} \\times 5 \\text{ books} = 800 \\text{ pages}\n   \\]\n\n3. **Calculate the total time required to bind all 800 pages:**\n   - It takes 6 minutes to bind one page.\n   \\[\n   \\text{Time for 800 pages} = 800 \\text{ pages} \\times 6 \\text{ minutes/page} = 4800 \\text{ minutes",
+          "answer": 4800
+        },
+        {
+          "raw": "To determine how many minutes it takes to bind 5 books, we need to calculate the total time required for each book and then multiply by 5.\n\nFirst, let's find out how long it takes to bind one book:\n- Sewing time per book: 6 minutes\n- Gluing time per book: 4 minutes\n\nTotal time per book = Sewing time + Gluing time\n= 6 minutes + 4 minutes\n= 10 minutes\n\nNext, we need to find out the total number of books:\n- There are 32 pages in the book.\n- Each book has 32 pages.\n\nNumber of books = Total number of pages / Number of pages per book\n= 32 pages / 32 pages/book\n= 1 book/book\n\nNow, we can calculate the total time to bind 5 books:\n- Time per book: 10 minutes\n- Number of books: 5\n\nTotal time = Time per book \u00d7 Number of books\n= 10 minutes/book \u00d7 5 books\n= 50 minutes\n\nTherefore, it takes 50 minutes to bind 5 books. The final answer is:\n\nAnswer: 50 minutes",
+          "answer": 50
+        },
+        {
+          "raw": "To determine how long it takes to bind 5 books, we need to calculate the total time required for each book separately and then sum these times.\n\n1. **Time to Bind One Book:**\n   - Sewing time per book: 6 minutes\n   - Gluing time per book: 4 minutes\n   - Total time per book = Sewing + Gluing = 6 + 4 = 10 minutes\n\n2. **Total Pages in 5 Books:**\n   - Number of pages in one book: 288\n   - Total number of pages in 5 books = 288 \u00d7 5 = 1440 pages\n\n3. **Total Time to Bind 5 Books:**\n   - Time per page: 10 minutes\n   - Total time for 1440 pages = 1440 \u00d7 10 = 14400 minutes\n\nTherefore, the total time taken to bind 5 books is \\(\\boxed{14400}\\) minutes.",
+          "answer": 14400
+        },
+        {
+          "raw": "To determine how long it takes to bind 5 books, we need to consider both the time spent on sewing and the time spent on gluing per page. Here's the step-by-step reasoning:\n\n1. **Calculate the total number of pages bound:**\n   - The first book has 32 pages.\n   - Each subsequent book has 31 more pages than the previous one (since there are 32 - 1 = 31 pages between the first and second book).\n   - Therefore, the total number of pages for 5 books is:\n     \\[\n     32 + (32-1) + (32-2) + (32-3) + (32-4) = 32 + 31 + 30 + 29 + 28 = 150 \\text{ pages}\n     \\]\n\n2. **Determine the sewing and gluing times per page:**\n   - Sewing takes 6 minutes per page.\n   - Gluing takes 4 minutes per page.\n\n3. **Calculate the total sewing and gluing time for 150 pages:**\n   - Total sewing time for 150 pages:\n     \\[\n     ",
+          "answer": 150
+        }
+      ]
+    },
+    {
+      "id": "p04_courier_trips",
+      "text": "A courier van carries 26 parcels per trip. A depot must move 208 parcels. The van makes 4 trips before noon. How many trips are still needed after noon?",
+      "gold": 4,
+      "direct": {
+        "raw": "13",
+        "answer": 13
+      },
+      "chains": [
+        {
+          "raw": "To determine how many more trips the courier van needs to make after noon, we can follow these steps:\n\n1. Calculate the total number of parcels transported in 4 trips.\n2. Subtract this total from the number of parcels required to complete the round trip.\n\nFirst, let's calculate the total number of parcels transported in 4 trips:\n\\[\n26 \\text{ parcels/trip} \\times 4 \\text{ trips} = 104 \\text{ parcels}\n\\]\n\nNext, we subtract the number of parcels already transported (208) from the total number of parcels required (104):\n\\[\n104 \\text{ parcels} - 208 \\text{ parcels} = -94 \\text{ parcels}\n\\]\n\nSince the result is negative, it means there are actually fewer parcels than required for one round trip. This indicates that the courier van has completed all its deliveries and no more need for additional trips.\n\nTherefore, the number of trips still needed after noon is:\n\\[\n\\boxed{0}\n\\]",
+          "answer": 0
+        },
+        {
+          "raw": "To determine how many more trips are needed for the courier van to complete its deliveries, we can follow these steps:\n\n1. **Calculate the total number of parcels delivered in 4 trips:**\n   Each trip delivers 26 parcels.\n   \\[\n   4 \\text{ trips} \\times 26 \\text{ parcels/trip} = 104 \\text{ parcels}\n   \\]\n\n2. **Determine the remaining number of parcels to be delivered:**\n   The depot needs to deliver 208 parcels.\n\n3. **Calculate the number of additional parcels that need to be delivered:**\n   Subtract the initial number of parcels from the total number needed:\n   \\[\n   208 \\text{ parcels} - 104 \\text{ parcels} = 104 \\text{ parcels}\n   \\]\n\n4. **Determine how many more trips are required:**\n   Since each trip delivers 26 parcels, we divide the remaining number of parcels by the capacity of one trip:\n   \\[\n   \\frac{104 \\text{ parcels}}{26 \\text{ parcels/trip}} \\approx 4.095 \\text{ trips}\n   \\]\n   Since",
+          "answer": 4.095
+        },
+        {
+          "raw": "To determine how many more trips are needed for the courier van to deliver 208 parcels, we can follow these steps:\n\n1. **Calculate the total number of parcels delivered in 4 trips:**\n   Each trip delivers 26 parcels.\n   \\[\n   \\text{Total parcels delivered} = 26 \\times 4 = 104\n   \\]\n\n2. **Determine how many more parcels need to be delivered:**\n   The depot needs to move 208 parcels.\n\n3. **Find out how many additional trips are required:**\n   Subtract the number of parcels already delivered from the total number of parcels needed:\n   \\[\n   \\text{Additional trips needed} = \\frac{\\text{Total parcels needed}}{\\text{Parcels per trip}} = \\frac{208}{26}\n   \\]\n   Performing the division:\n   \\[\n   \\frac{208}{26} = 8\n   \\]\n\nTherefore, the number of additional trips needed is \\(8\\).\n\n**Final Answer:** After noon, there are \\(\\boxed{8}\\) more trips needed for the courier van to complete its deliveries.",
+          "answer": 8
+        },
+        {
+          "raw": "To determine how many more trips are needed for the courier van to complete its deliveries, we can follow these steps:\n\n1. **Calculate the total number of parcels delivered in the first 4 trips:**\n   Each trip delivers 26 parcels.\n   \\[\n   26 \\text{ parcels/trip} \\times 4 \\text{ trips} = 104 \\text{ parcels}\n   \\]\n\n2. **Determine how many parcels are left to be delivered:**\n   The depot needs to deliver 208 parcels.\n\n3. **Calculate the number of additional parcels that need to be delivered:**\n   Subtract the number of parcels already delivered from the total required:\n   \\[\n   208 \\text{ parcels} - 104 \\text{ parcels} = 104 \\text{ parcels}\n   \\]\n\n4. **Determine how many more trips are needed to deliver the remaining parcels:**\n   Since each trip delivers 26 parcels, divide the remaining parcels by the capacity of one trip:\n   \\[\n   \\frac{104 \\text{ parcels}}{26 \\text{ parcels/trip}} = 4 \\text{ trips}\n   \\]\n\nTherefore, after",
+          "answer": 4
+        },
+        {
+          "raw": "To determine how many more trips the courier van needs to make, we can follow these steps:\n\n1. Calculate the total number of parcels transported in 4 trips.\n   - Each trip carries 26 parcels.\n   - Therefore, in 4 trips, the total number of parcels is \\( 26 \\times 4 = 104 \\).\n\n2. Determine how many parcels are left to be delivered.\n   - There were originally 208 parcels to deliver.\n   - After 4 trips, there are \\( 208 - 104 = 104 \\) parcels remaining.\n\n3. Calculate the number of additional trips required to deliver the remaining parcels.\n   - Each trip requires 26 parcels.\n   - To find out how many more trips are needed to deliver the remaining 104 parcels, we divide the remaining number of parcels by the number of parcels each trip delivers:\n     \\[\n     \\frac{104}{26} = 4 \\text{ remainder } 10\n     \\]\n   - This means that 4 trips will complete the delivery of the first 104 parcels (since \\( 4 \\times 26 = 104 \\)), and",
+          "answer": 104
+        },
+        {
+          "raw": "To determine how many more trips the courier van needs to make after noon, we can follow these steps:\n\n1. Calculate the total number of parcels the van has already carried.\n2. Determine how many parcels remain to be delivered.\n3. Calculate how many more trips are required to deliver the remaining parcels.\n\nStep 1: Calculate the total number of parcels the van has already carried.\nThe van carries 26 parcels per trip and makes 4 trips in total.\n\\[ 26 \\text{ parcels/trip} \\times 4 \\text{ trips} = 104 \\text{ parcels} \\]\n\nStep 2: Determine how many parcels remain to be delivered.\nThe depot requires 208 parcels for one trip.\nSince the van has already carried 104 parcels, the number of parcels left to be delivered is:\n\\[ 208 \\text{ parcels} - 104 \\text{ parcels} = 104 \\text{ parcels} \\]\n\nStep 3: Calculate how many more trips are required to deliver the remaining parcels.\nEach trip delivers 26 parcels.\nTo find out how many more trips are needed to deliver 104 parcels, we divide the remaining parcels by the number of",
+          "answer": 104
+        },
+        {
+          "raw": "To determine how many more trips are needed to transport 208 parcels given that the van makes 26 parcels per trip and has already made 4 trips, we can follow these steps:\n\n1. Calculate the total number of parcels transported so far:\n   \\[\n   26 \\text{ parcels/trip} \\times 4 \\text{ trips} = 104 \\text{ parcels}\n   \\]\n\n2. Determine how many more parcels need to be transported:\n   \\[\n   208 \\text{ parcels} - 104 \\text{ parcels} = 104 \\text{ parcels}\n   \\]\n\n3. Calculate how many more trips are required to transport the remaining 104 parcels:\n   \\[\n   \\frac{104 \\text{ parcels}}{26 \\text{ parcels/trip}} = 4 \\text{ trips}\n   \\]\n\nTherefore, the number of additional trips needed is:\n\\[\n\\boxed{4}\n\\]",
+          "answer": 4
+        },
+        {
+          "raw": "To determine how many more trips are needed to deliver all the parcels, we can follow these steps:\n\n1. **Calculate the total number of parcels delivered in the first 4 trips:**\n   - Each trip delivers 26 parcels.\n   - For 4 trips, the total is \\(26 \\times 4 = 104\\) parcels.\n\n2. **Determine the remaining number of parcels to be delivered:**\n   - The depot needs to deliver 208 parcels.\n   - After 4 trips, 104 parcels have been delivered.\n   - Therefore, the remaining number of parcels to be delivered is \\(208 - 104 = 104\\).\n\n3. **Calculate the number of additional trips required:**\n   - Since each trip delivers 26 parcels, we need to find out how many trips are needed to deliver the remaining 104 parcels.\n   - We do this by dividing the remaining parcels by the number of parcels delivered per trip:\n     \\[\n     \\frac{104}{26} \\approx 4.095\n     \\]\n   - Since we cannot make a fraction of a trip, we round up to the next whole number because even",
+          "answer": 4.095
+        },
+        {
+          "raw": "To determine how many more trips are needed for the courier van to complete its deliveries and reach the depot without exceeding it, we can follow these steps:\n\n1. Calculate the total number of parcels the van has already delivered.\n   - The depot requires 208 parcels per trip.\n   - The van made 4 trips in total.\n\n   \\[\n   \\text{Total parcels delivered} = 208 \\times 4 = 832\n   \\]\n\n2. Determine how many more parcels need to be delivered.\n   - The depot needs to have at least 208 parcels.\n   - The van has already delivered 832 parcels.\n\n   \\[\n   \\text{Additional parcels needed} = 208 - 832 = -624\n   \\]\n\nSince the number of additional parcels needed is negative, it means that the van will run out of parcels before noon. Therefore, no further trips are needed to deliver all the remaining parcels.\n\nThe final answer is:\n\n\\boxed{-624}",
+          "answer": -624
+        }
+      ]
+    },
+    {
+      "id": "p05_theatre_change",
+      "text": "A theatre sells tickets for $9 each. A school books 7 rows of 12 seats and pays with a $1,000 voucher. How much change is due?",
+      "gold": 244,
+      "direct": {
+        "raw": "$300",
+        "answer": 300
+      },
+      "chains": [
+        {
+          "raw": "To determine how much change is due, we need to follow these steps:\n\n1. Calculate the total cost of the tickets.\n2. Subtract the amount paid from the total cost.\n\n**Step 1: Calculate the total cost of the tickets.**\n\nThe school books 7 rows of 12 seats each at $9 per seat.\n\\[\n\\text{Total number of seats} = 7 \\times 12 = 84\n\\]\n\\[\n\\text{Total cost} = 84 \\times 9 = 756\n\\]\n\n**Step 2: Subtract the amount paid from the total cost.**\n\nThe school pays with a $1,000 voucher.\n\\[\n\\text{Change} = 1000 - 756 = 244\n\\]\n\nTherefore, the answer is:\n\\[\n\\boxed{244}\n\\]",
+          "answer": 244
+        },
+        {
+          "raw": "To determine the change from the school's payment to the total cost of the tickets, we need to follow these steps:\n\n1. **Calculate the total number of tickets sold:**\n   The school buys 7 rows of 12 seats each.\n   \\[\n   7 \\text{ rows} \\times 12 \\text{ seats/row} = 84 \\text{ seats}\n   \\]\n\n2. **Determine the total cost of the tickets:**\n   Each ticket costs $9.\n   \\[\n   84 \\text{ seats} \\times 9 \\text{ dollars/seat} = 756 \\text{ dollars}\n   \\]\n\n3. **Subtract the amount paid from the total cost:**\n   The school pays with a $1,000 voucher.\n   \\[\n   756 \\text{ dollars} - 1000 \\text{ dollars} = -244 \\text{ dollars}\n   \\]\n   \nSince the result is negative, it indicates that the school has actually received more money than needed. The change should be calculated as:\n\\[\n1000 \\text{ dollars} - (-244 \\text{ dollars}) = ",
+          "answer": -244
+        },
+        {
+          "raw": "To determine the change received after paying with a $1,000 voucher, we need to follow these steps:\n\n1. **Calculate the total cost of the tickets:**\n   - Each ticket costs $9.\n   - The school buys 7 rows of 12 seats.\n\n   First, calculate the number of seats in one row:\n   \\[\n   7 \\text{ rows} \\times 12 \\text{ seats/row} = 84 \\text{ seats}\n   \\]\n\n   Next, calculate the total number of seats purchased:\n   \\[\n   7 \\text{ rows} \\times 84 \\text{ seats/row} = 588 \\text{ seats}\n   \\]\n\n   Finally, calculate the total cost of the tickets:\n   \\[\n   588 \\text{ seats} \\times \\$9/\\text{seat} = \\$5232\n   \\]\n\n2. **Determine the amount paid using the voucher:**\n   - The voucher amounts to $1,000.\n\n3. **Calculate the change received:**\n   - Subtract the total cost of the tickets from the amount paid:\n   \\[\n   \\$1,000 - \\$",
+          "answer": 1000
+        },
+        {
+          "raw": "To determine how much change is due from the school, we need to follow these steps:\n\n1. Calculate the total number of seats in the school's book.\n2. Determine the total cost of the tickets using the price per ticket.\n3. Subtract the total cost from the amount paid (voucher) to find the change.\n\nLet's start with the first step:\n\n1. The school books 7 rows of 12 seats each:\n   \\[\n   7 \\text{ rows} \\times 12 \\text{ seats/row} = 84 \\text{ seats}\n   \\]\n\n2. Each ticket costs $9:\n   \\[\n   84 \\text{ seats} \\times 9 \\text{ dollars/seat} = 756 \\text{ dollars}\n   \\]\n\n3. The school pays with a $1,000 voucher:\n   \\[\n   1000 \\text{ dollars} - 756 \\text{ dollars} = 244 \\text{ dollars}\n   \\]\n\nTherefore, the change the school receives is \\boxed{244}.",
+          "answer": 244
+        },
+        {
+          "raw": "To determine how much change is due from the school after purchasing tickets, we need to follow these steps:\n\n1. Calculate the total cost of the tickets.\n2. Subtract the amount paid from the total cost.\n\n**Step 1: Calculate the total cost of the tickets.**\n\nThe school buys 7 rows of 12 seats each at $9 per ticket.\n\\[\n\\text{Total number of seats} = 7 \\times 12 = 84\n\\]\n\\[\n\\text{Total cost} = 84 \\times 9 = 756\n\\]\n\nSo, the total cost of the tickets is $756.\n\n**Step 2: Subtract the amount paid from the total cost.**\n\nThe school pays with a $1,000 voucher.\n\\[\n\\text{Change} = 1000 - 756 = 244\n\\]\n\nTherefore, the change due is $244.\n\nThe final answer is:\n\\[\n\\boxed{244}\n\\]",
+          "answer": 244
+        },
+        {
+          "raw": "To determine how much change the school receives after purchasing 7 rows of 12 seats at $9 each, we can follow these steps:\n\n1. Calculate the total cost of the tickets:\n   \\[\n   \\text{Total cost} = 7 \\times 12 \\times 9\n   \\]\n   First, multiply 7 by 12:\n   \\[\n   7 \\times 12 = 84\n   \\]\n   Then, multiply the result by 9:\n   \\[\n   84 \\times 9 = 756\n   \\]\n   So, the total cost of the tickets is $756.\n\n2. Subtract the amount paid from the total cost to find the change:\n   \\[\n   \\text{Change} = 1000 - 756\n   \\]\n   Perform the subtraction:\n   \\[\n   1000 - 756 = 244\n   \\]\n\nTherefore, the answer is:\n\\[\n\\boxed{244}\n\\]",
+          "answer": 244
+        },
+        {
+          "raw": "To determine the amount of change received after purchasing 7 rows of 12 seats at $9 each with a $1,000 voucher, we can follow these steps:\n\n1. **Calculate the total number of seats purchased:**\n   - Each row has 12 seats.\n   - There are 7 rows.\n   \\[\n   7 \\text{ rows} \\times 12 \\text{ seats per row} = 84 \\text{ seats}\n   \\]\n\n2. **Calculate the total cost of the tickets:**\n   - The price of one ticket is $9.\n   - The total cost for 84 tickets:\n   \\[\n   84 \\text{ tickets} \\times \\$9 \\text{ per ticket} = \\$756\n   \\]\n\n3. **Determine the change received from the voucher:**\n   - The school paid with a $1,000 voucher.\n   - The change received is calculated as follows:\n   \\[\n   \\text{Change} = \\text{Voucher Amount} - \\text{Total Cost}\n   \\]\n   \\[\n   \\text{Change} = \\$1,000 - \\$756 = \\$2",
+          "answer": 2
+        },
+        {
+          "raw": "To determine the change due to the school after purchasing tickets, we need to follow these steps:\n\n1. Calculate the total cost of the tickets.\n2. Subtract this total from the amount paid.\n\n**Step 1: Calculate the total cost of the tickets.**\n\nThe school buys 7 rows of 12 seats each at $9 per ticket.\n\\[ \\text{Total cost} = 7 \\times 12 \\times 9 \\]\n\nFirst, calculate \\(7 \\times 12\\):\n\\[ 7 \\times 12 = 84 \\]\n\nNext, multiply the result by 9:\n\\[ 84 \\times 9 = 756 \\]\n\nSo, the total cost of the tickets is $756.\n\n**Step 2: Subtract the total cost from the amount paid.**\n\nThe school pays with a $1,000 voucher.\n\\[ \\text{Change} = 1000 - 756 \\]\n\nPerform the subtraction:\n\\[ 1000 - 756 = 244 \\]\n\nTherefore, the change due to the school is $244.\n\nAnswer: $244",
+          "answer": 244
+        },
+        {
+          "raw": "To determine the change from the school's purchase to the total cost, we need to follow these steps:\n\n1. **Calculate the number of seats bought**: The school buys 7 rows of 12 seats each.\n   \\[\n   \\text{Number of seats} = 7 \\times 12 = 84\n   \\]\n\n2. **Calculate the total cost of the tickets**: Each ticket costs $9, so the total cost for 84 tickets is:\n   \\[\n   \\text{Total cost} = 84 \\times 9 = 756\n   \\]\n\n3. **Subtract the amount paid from the total cost**: The school pays with a $1,000 voucher. Therefore, the change received is:\n   \\[\n   \\text{Change} = 1000 - 756 = 244\n   \\]\n\nThus, the answer is:\n\\[\n\\boxed{244}\n\\]",
+          "answer": 244
+        }
+      ]
+    },
+    {
+      "id": "p06_warehouse_bottles",
+      "text": "A warehouse packs 6 bottles per box and 8 boxes per crate. An order is for 30 crates, and 5 crates are already packed. How many bottles still need to be packed?",
+      "gold": 1200,
+      "direct": {
+        "raw": "15",
+        "answer": 15
+      },
+      "chains": [
+        {
+          "raw": "To determine how many bottles still need to be packed, we can follow these steps:\n\n1. **Calculate the total number of crates that have been filled so far:**\n   - Each crate contains 8 boxes.\n   - There are 5 crates that are already packed.\n\n   \\[\n   5 \\text{ crates} \\times 8 \\text{ boxes/crate} = 40 \\text{ boxes}\n   \\]\n\n2. **Determine the number of additional boxes needed to fill the remaining crates:**\n   - The order requires 30 crates in total.\n   - We already have 5 crates filled, so we need an additional \\( 30 - 5 = 25 \\) crates.\n\n3. **Calculate the total number of boxes required to pack the remaining crates:**\n   - Each crate now contains 9 boxes (since each box contains 6 bottles).\n\n   \\[\n   25 \\text{ crates} \\times 9 \\text{ boxes/crate} = 225 \\text{ boxes}\n   \\]\n\n4. **Determine the number of bottles needed for the remaining boxes:**\n   - Each box contains 8 bottles.\n\n   \\[\n   225 \\text{",
+          "answer": 225
+        },
+        {
+          "raw": "To determine how many bottles still need to be packed, we can follow these steps:\n\n1. Calculate the total number of bottles that have been packed so far.\n2. Subtract this number from the total number of bottles needed.\n\nFirst, let's calculate the total number of bottles that have been packed:\n- Each crate contains 8 boxes.\n- Each box contains 6 bottles.\n- Therefore, each crate contains \\(8 \\times 6 = 48\\) bottles.\n- With 5 crates already packed, the total number of bottles packed so far is \\(5 \\times 48 = 240\\).\n\nNext, let's subtract this number from the total number of bottles needed:\n- The order requires 30 crates.\n- Since 5 crates are already packed, the remaining crates available are \\(30 - 5 = 25\\).\n- The total number of bottles required remains 30 (as all crates are now filled), but since we only need to pack the remaining 25 crates, the number of bottles still needing to be packed is \\(30 - 25 = 5\\).\n\nTherefore, the answer is:\n\\[ \\boxed{5} \\]",
+          "answer": 5
+        },
+        {
+          "raw": "To determine how many bottles still need to be packed, we can break down the problem into smaller steps:\n\n1. Calculate the total number of boxes needed for the 30 crates.\n2. Determine the total number of bottles needed based on the number of boxes.\n3. Subtract the number of bottles already packed from the total number of bottles needed.\n\nLet's go through these steps in detail:\n\n1. **Calculate the total number of boxes needed for the 30 crates:**\n   - Each crate contains 8 boxes.\n   - Therefore, the total number of boxes needed is \\(30 \\times 8 = 240\\).\n\n2. **Determine the total number of bottles needed:**\n   - Each box contains 6 bottles.\n   - Therefore, the total number of bottles needed is \\(240 \\times 6 = 1440\\).\n\n3. **Subtract the number of bottles already packed from the total number of bottles needed:**\n   - The order includes 5 crates that have already been packed.\n   - Therefore, the number of bottles still needing to be packed is \\(1440 - (5 \\times 6) = 1440 - 30 = 141",
+          "answer": 141
+        },
+        {
+          "raw": "To determine how many bottles still need to be packed, we can follow these steps:\n\n1. Calculate the total number of boxes needed:\n   - Each crate requires 8 boxes.\n   - There are 30 crates in total.\n   \\[\n   30 \\text{ crates} \\times 8 \\text{ boxes/crate} = 240 \\text{ boxes}\n   \\]\n\n2. Determine the number of bottles needed for all the boxes:\n   - Each box contains 6 bottles.\n   \\[\n   240 \\text{ boxes} \\times 6 \\text{ bottles/box} = 1440 \\text{ bottles}\n   \\]\n\n3. Calculate the number of bottles that have been packed so far:\n   - 5 crates were already packed.\n   - Each crate contains 8 boxes.\n   \\[\n   5 \\text{ crates} \\times 8 \\text{ boxes/crate} = 40 \\text{ boxes}\n   \\]\n   Since each box has 6 bottles, the number of bottles already packed is:\n   \\[\n   40 \\text{ boxes} \\times 6 \\text{ bottles/box} = 240 \\text",
+          "answer": 240
+        },
+        {
+          "raw": "To determine how many bottles still need to be packed, we'll follow these steps:\n\n1. Calculate the total number of boxes needed for the 30 crates.\n2. Determine the number of boxes that have been packed so far (including the 5 already packed).\n3. Subtract the number of boxes already packed from the total number of boxes needed.\n\nLet's start with the first step:\n\n1. **Calculate the total number of boxes needed for the 30 crates:**\n   Each crate contains 8 boxes.\n   \\[\n   \\text{Total boxes} = 30 \\times 8 = 240\n   \\]\n\n2. **Determine the number of boxes that have been packed so far:**\n   We know that 5 crates were already packed.\n   \\[\n   \\text{Boxes already packed} = 5 \\times 8 = 40\n   \\]\n   Therefore, the number of boxes that have not yet been packed is:\n   \\[\n   \\text{Unpacked boxes} = 240 - 40 = 200\n   \\]\n\n3. **Subtract the number of boxes already packed from the total number of boxes needed:**\n   \\[\n   \\text",
+          "answer": 3
+        },
+        {
+          "raw": "To determine how many bottles still need to be packed, we can follow these steps:\n\n1. **Calculate the total number of boxes needed for the order:**\n   - Each crate requires 8 boxes.\n   - There are 30 crates in total.\n   \n   \\[\n   \\text{Total boxes} = 30 \\text{ crates} \\times 8 \\text{ boxes/crate} = 240 \\text{ boxes}\n   \\]\n\n2. **Determine the number of boxes that have been packed so far:**\n   - Out of the 30 crates, 5 crates were already packed.\n\n   \\[\n   \\text{Boxes already packed} = 5 \\text{ crates} \\times 8 \\text{ boxes/crate} = 40 \\text{ boxes}\n   \\]\n\n3. **Calculate the number of boxes still needing to be packed:**\n\n   \\[\n   \\text{Remaining boxes} = \\text{Total boxes} - \\text{Boxes already packed}\n   \\]\n   \n   \\[\n   \\text{Remaining boxes} = 240 \\text{ boxes} - 40 \\text{ boxes} = 200 \\text{ boxes}\n  ",
+          "answer": 200
+        },
+        {
+          "raw": "To determine how many more bottles need to be packed, we'll follow these steps:\n\n1. Calculate the total number of bottles that can be packed in one crate.\n2. Determine the total number of bottles that have been packed so far.\n3. Subtract the number of bottles already packed from the total number of bottles that can be packed.\n\nLet's start with the first step:\n\n1. Each crate holds 8 bottles.\n2. The order includes 30 crates, but only 5 crates have been packed. Therefore, the number of bottles that have been packed is:\n   \\[\n   5 \\text{ crates} \\times 8 \\text{ bottles/crate} = 40 \\text{ bottles}\n   \\]\n\nNext, we calculate the total number of bottles that can be packed in all the crates:\n\n3. Since each crate holds 8 bottles, the total number of bottles that can be packed is:\n   \\[\n   30 \\text{ crates} \\times 8 \\text{ bottles/crate} = 240 \\text{ bottles}\n   \\]\n\nFinally, we subtract the number of bottles already packed from the total number of bottles that can be packed:\n\n\\[\n240 \\text{ bottles}",
+          "answer": 240
+        },
+        {
+          "raw": "To determine how many bottles still need to be packed, we can follow these steps:\n\n1. Calculate the total number of crates that have been packed so far.\n2. Determine the number of crates that remain to be packed.\n3. Calculate the total number of bottles that need to be packed based on the rate of packing.\n\nFirst, let's calculate the total number of crates that have been packed so far:\n- Each crate contains 8 boxes.\n- There are 30 crates in total.\n- Therefore, the number of crates that have been packed so far is \\(30 \\times 8 = 240\\) boxes.\n\nNext, let's determine the number of crates that remain to be packed:\n- The order includes 5 crates that were already packed.\n- So, the number of crates remaining is \\(30 - 5 = 25\\).\n\nNow, let's calculate the total number of bottles that need to be packed:\n- Each box contains 6 bottles.\n- With 25 crates remaining, each crate will contain \\(25 \\times 6 = 150\\) bottles.\n- Therefore, the total number of bottles needed is \\(25 \\times 150 = 3750\\) bottles.\n\n",
+          "answer": 3750
+        },
+        {
+          "raw": "To determine how many bottles still need to be packed, we can break down the problem into smaller steps.\n\n1. **Calculate the total number of crates that have already been packed:**\n   - Each crate contains 8 boxes.\n   - There are 5 crates that have already been packed.\n   - Therefore, the number of boxes in these 5 crates is:\n     \\[\n     5 \\text{ crates} \\times 8 \\text{ boxes/crate} = 40 \\text{ boxes}\n     \\]\n\n2. **Determine the total number of boxes needed for the order:**\n   - The order includes 30 crates.\n   - Each crate needs 6 bottles.\n   - Therefore, the total number of bottles needed is:\n     \\[\n     30 \\text{ crates} \\times 6 \\text{ bottles/crate} = 180 \\text{ bottles}\n     \\]\n\n3. **Subtract the number of boxes already packed from the total number of boxes needed:**\n   - The total number of boxes needed is 180.\n   - The number of boxes already packed is 40.\n   - Therefore, the number of additional boxes needed is:\n     \\[\n     1",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "p07_garden_seedlings",
+      "text": "A garden centre sells seedlings in trays of 12. A gardener buys 9 trays and plants 86 seedlings. How many seedlings are left unplanted?",
+      "gold": 22,
+      "direct": {
+        "raw": "34",
+        "answer": 34
+      },
+      "chains": [
+        {
+          "raw": "To determine how many seedlings are left unplanted, we need to follow these steps:\n\n1. Calculate the total number of seedlings planted.\n2. Subtract the number of planted seedlings from the total number of seedlings bought.\n\nFirst, let's calculate the total number of seedlings planted:\n- There are 9 trays.\n- Each tray contains 12 seedlings.\n\\[\n9 \\text{ trays} \\times 12 \\text{ seedlings/tray} = 108 \\text{ seedlings}\n\\]\n\nNext, subtract the number of planted seedlings from the total number of seedlings bought:\n- Total seedlings bought: 9 trays \u00d7 12 seedlings/tray = 108 seedlings\n- Planted seedlings: 108 seedlings - 86 seedlings = 22 seedlings\n\nTherefore, the number of seedlings left unplanted is:\n\\boxed{22}",
+          "answer": 22
+        },
+        {
+          "raw": "To determine how many seedlings are left unplanted, we need to follow these steps:\n\n1. Calculate the total number of seedlings planted.\n2. Subtract the number of planted seedlings from the total number of seedlings bought.\n\nStep 1: Calculate the total number of seedlings planted.\nThe garden center sold seedlings in trays of 12 each. The gardener bought 9 trays.\n\\[ \\text{Total seedlings planted} = 9 \\text{ trays} \\times 12 \\text{ seedlings per tray} = 108 \\text{ seedlings} \\]\n\nStep 2: Subtract the number of planted seedlings from the total number of seedlings bought.\nThe gardener initially planned to plant 86 seedlings, but only 108 were actually planted.\n\\[ \\text{Seedlings left unplanted} = 86 \\text{ planted seeds} - 108 \\text{ planted seeds} = -22 \\text{ (This is incorrect; it should be calculated as subtracting)} \\]\nCorrect calculation:\n\\[ \\text{Seedlings left unplanted} = 86 - 108 + 9 = -22 + 9 = -1",
+          "answer": -1
+        },
+        {
+          "raw": "To determine how many seedlings are left unplanted, we need to follow these steps:\n\n1. **Calculate the total number of seedlings bought:**\n   - Each tray contains 12 seedlings.\n   - The gardener buys 9 trays.\n   \\[\n   \\text{Total seedlings} = 9 \\times 12 = 108\n   \\]\n\n2. **Determine the number of seedlings planted:**\n   - The gardener plants 86 seedlings.\n\n3. **Find out how many seedlings were actually planted:**\n   - Subtract the number of seedlings planted from the total number of seedlings:\n   \\[\n   \\text{Planted seedlings} = 108 - 86 = 22\n   \\]\n\n4. **Calculate the number of unplanted seedlings:**\n   - Subtract the number of planted seedlings from the total number of seedlings:\n   \\[\n   \\text{Unplanted seedlings} = 108 - 22 = 86\n   \\]\n\nThus, the number of seedlings left unplanted is \\boxed{86}.",
+          "answer": 86
+        },
+        {
+          "raw": "To determine how many seedlings are left unplanted, we need to follow these steps:\n\n1. Calculate the total number of seedlings planted.\n2. Subtract the number of planted seedlings from the total number of seedlings bought.\n\nStep 1: Calculate the total number of seedlings planted.\n- Each tray contains 12 seedlings.\n- The gardener bought 9 trays.\n- Therefore, the total number of seedlings planted is \\( 9 \\times 12 = 108 \\).\n\nStep 2: Subtract the number of planted seedlings from the total number of seedlings bought.\n- The gardener bought 86 seedlings.\n- After planting 108 seedlings, the number of unplanted seedlings is \\( 86 - 108 = -22 \\).\n\nSince the result is negative, it indicates that there were actually more seedlings than planted. However, if we consider the question as asking for the difference between the planted and bought seeds, the answer would be:\n\\[ 108 - 86 = 22 \\]\n\nBut since the problem asks for the number of seedlings left unplanted, which should be positive, the correct interpretation is:\n\\[ 86",
+          "answer": 86
+        },
+        {
+          "raw": "To determine how many seedlings are left unplanted, we need to follow these steps:\n\n1. **Calculate the total number of seedlings bought:**\n   - Each tray contains 12 seedlings.\n   - The gardener buys 9 trays.\n   \\[\n   \\text{Total seedlings} = 9 \\text{ trays} \\times 12 \\text{ seedlings/tray} = 108 \\text{ seedlings}\n   \\]\n\n2. **Determine the number of seedlings planted:**\n   - The gardener plants 86 seedlings.\n\n3. **Calculate the number of seedlings that remain unplanted:**\n   - Subtract the number of planted seedlings from the total number of seedlings.\n   \\[\n   \\text{Unplanted seedlings} = \\text{Total seedlings} - \\text{Planted seedlings} = 108 \\text{ seedlings} - 86 \\text{ seedlings} = 22 \\text{ seedlings}\n   \\]\n\nTherefore, the number of seedlings left unplanted is \\(\\boxed{22}\\).",
+          "answer": 22
+        },
+        {
+          "raw": "To determine how many seedlings are left unplanted, we need to follow these steps:\n\n1. **Calculate the total number of seedlings planted:**\n   - Each tray contains 12 seedlings.\n   - The gardener buys 9 trays.\n   - Therefore, the total number of seedlings planted is:\n     \\[\n     9 \\text{ trays} \\times 12 \\text{ seedlings/tray} = 108 \\text{ seedlings}\n     \\]\n\n2. **Determine the number of seedlings that were not planted:**\n   - The gardener planted 86 seedlings.\n   - The total number of seedlings planted is 108.\n   - Thus, the number of seedlings that were not planted is:\n     \\[\n     108 \\text{ seedlings} - 86 \\text{ seedlings} = 22 \\text{ seedlings}\n     \\]\n\n3. **Conclusion:**\n   - After planting 86 seedlings, there are 22 seedlings left unplanted.\n\nTherefore, the answer is:\n\\[\n\\boxed{22}\n\\]",
+          "answer": 22
+        },
+        {
+          "raw": "To determine how many seedlings are left unplanted, we need to follow these steps:\n\n1. Calculate the total number of seedlings bought.\n2. Subtract the number of planted seedlings from the total number of seedlings.\n\nFirst, let's calculate the total number of seedlings bought:\n- Each tray contains 12 seedlings.\n- The gardener bought 9 trays.\n\nSo, the total number of seedlings is:\n\\[ 9 \\text{ trays} \\times 12 \\text{ seedlings/tray} = 108 \\text{ seedlings} \\]\n\nNext, we subtract the number of planted seedlings from the total number of seedlings:\n- The gardener planted 86 seedlings.\n\nTherefore, the number of seedlings left unplanted is:\n\\[ 108 \\text{ seedlings} - 86 \\text{ planted seedlings} = 22 \\text{ seedlings} \\]\n\nAnswer: 22",
+          "answer": 22
+        },
+        {
+          "raw": "To determine how many seedlings are left unplanted, we need to follow these steps:\n\n1. **Calculate the total number of seedlings planted:**\n   - The garden center sells seedlings in trays of 12.\n   - The gardener bought 9 trays.\n   - Therefore, the total number of seedlings planted is:\n     \\[\n     9 \\text{ trays} \\times 12 \\text{ seedlings per tray} = 108 \\text{ seedlings}\n     \\]\n\n2. **Determine the number of seedlings that were actually planted:**\n   - The gardener planted 86 seedlings.\n\n3. **Calculate the number of unplanted seedlings:**\n   - Subtract the number of seedlings planted from the total number of seedlings planted:\n     \\[\n     108 \\text{ seedlings planted} - 86 \\text{ seedlings planted} = 22 \\text{ seedlings unplanted}\n     \\]\n\nThus, the number of seedlings left unplanted is \\boxed{22}.",
+          "answer": 22
+        },
+        {
+          "raw": "To determine how many seedlings are left unplanted, we need to follow these steps:\n\n1. Calculate the total number of seedlings planted.\n2. Subtract the number of planted seedlings from the total number of seedlings bought.\n\nLet's go through each step in detail:\n\n1. **Calculate the total number of seedlings planted:**\n   - Each tray contains 12 seedlings.\n   - The gardener buys 9 trays.\n   - Therefore, the total number of seedlings planted is:\n     \\[\n     9 \\text{ trays} \\times 12 \\text{ seedlings/tray} = 108 \\text{ seedlings}\n     \\]\n\n2. **Subtract the number of planted seedlings from the total number of seedlings bought:**\n   - The total number of seedlings bought is 9 trays.\n   - The total number of seedlings planted is 108.\n   - Therefore, the number of unplanted seedlings is:\n     \\[\n     9 \\text{ trays} - 108 \\text{ planted seedlings} = -99\n     \\]\n   - Since it's not possible to have negative plantings, this indicates that all 9 trays",
+          "answer": 9
+        }
+      ]
+    },
+    {
+      "id": "p08_library_net",
+      "text": "A library lends out 35 books per day. Over 6 days, 49 of the lent books are also returned. How many more books are out than came back, in total, over the 6 days?",
+      "gold": 161,
+      "direct": {
+        "raw": "21",
+        "answer": 21
+      },
+      "chains": [
+        {
+          "raw": "To determine how many more books are out than came back over the 6 days, we need to follow these steps:\n\n1. **Calculate the number of books that were returned:**\n   - The library lends out 35 books per day.\n   - Over 6 days, 49 books were returned.\n   \\[\n   \\text{Books returned} = 35 \\times 6 = 210\n   \\]\n\n2. **Determine the number of books that were not returned:**\n   - Subtract the number of books returned from the total number of books lent out.\n   \\[\n   \\text{Books not returned} = 35 - 210 = -175\n   \\]\n   However, this result is incorrect because it suggests an infinite number of books being lost or missing. This indicates there might be an error in the problem setup or assumptions.\n\nGiven the problem constraints and logical steps, let's re-evaluate the context:\n- If the book lending system is correct, then each day, only 35 books are lent out and only 35 books are returned (since all lend out).\n- Over 6 days, no books are lent out or returned, leading to a net loss",
+          "answer": 6
+        },
+        {
+          "raw": "To determine how many more books are out than came back, we need to follow these steps:\n\n1. Calculate the number of books that were returned.\n2. Determine the net change in the number of books (books borrowed - books returned).\n3. Find the difference between the number of books borrowed and the number of books returned.\n\nFirst, let's calculate the number of books that were returned:\n- The library lends out 35 books per day for 6 days.\n- Over 6 days, 49 books are returned.\n\nThe number of books returned is calculated as follows:\n\\[ 35 \\text{ books/day} \\times 6 \\text{ days} = 210 \\text{ books} \\]\n\nNext, we find the net change in the number of books:\n- Books borrowed: 35 books per day.\n- Books returned: 210 books.\n- Net change in books: \\( 35 \\text{ books/day} - 210 \\text{ books} = -175 \\text{ books/day} \\)\n\nSince this net change happens over 6 days, we multiply the daily net change by 6 to get the total net change over the 6 days:\n\\[ -1",
+          "answer": -1
+        },
+        {
+          "raw": "To solve this problem, we need to determine how many books are out and how many were returned over the course of 6 days. Let's break it down step by step.\n\n1. **Calculate the number of books that were not returned:**\n   - The library lends out 35 books per day.\n   - Over 6 days, \\(6 \\times 35 = 210\\) books were lent out.\n   - Since 49 books were returned, the number of books that were not returned is:\n     \\[\n     210 - 49 = 161\n     \\]\n\n2. **Determine the total number of books borrowed but not returned:**\n   - The total number of books borrowed over 6 days is 210.\n   - Out of these, 49 were returned.\n   - Therefore, the number of books borrowed but not returned is:\n     \\[\n     210 - 49 = 161\n     \\]\n\n3. **Calculate the net change in the number of books:**\n   - The library lent out 210 books (not returned).\n   - The number of books returned was 49.\n   - Therefore, the",
+          "answer": 49
+        },
+        {
+          "raw": "To determine how many more books are out than came back over the 6 days, we need to follow these steps:\n\n1. Calculate the total number of books that were borrowed and returned.\n2. Determine the difference between the number of books borrowed and the number of books returned.\n\nFirst, let's find out how many books were borrowed and returned:\n- Books borrowed each day: 35\n- Number of days: 6\n- Total books borrowed = 35 books/day * 6 days = 210 books\n\nNext, we know that 49 books were returned over the 6 days. So, the number of books that were either borrowed or returned is:\n- Total books borrowed + Total books returned = 210 books + 49 books = 259 books\n\nNow, we can calculate how many books are out compared to those that have been returned:\n- Books out = Total books borrowed - Total books returned = 210 books - 49 books = 161 books\n\nTherefore, the number of books that are out is \\boxed{161}.",
+          "answer": 161
+        },
+        {
+          "raw": "To determine how many more books are out than came back over the 6 days, we can follow these steps:\n\n1. Calculate the number of books that were borrowed and returned:\n   - Books borrowed each day: 35\n   - Number of days: 6\n   - Total books borrowed = \\( 35 \\times 6 = 210 \\)\n\n2. Determine how many books were actually returned after lending them out:\n   - Books returned each day: 49\n   - Number of days: 6\n   - Total books returned = \\( 49 \\times 6 = 294 \\)\n\n3. Find the difference between the books returned and those borrowed:\n   - Difference = Total books returned - Total books borrowed\n   - Difference = \\( 294 - 210 = 84 \\)\n\nTherefore, there are 84 more books out than came back over the 6 days.\n\nAnswer: 84",
+          "answer": 84
+        },
+        {
+          "raw": "To determine how many more books are out than came back over the 6 days, we can follow these steps:\n\n1. **Calculate the number of books that were not returned:**\n   - Total books lent out in 6 days = 35 books/day \u00d7 6 days = 210 books.\n   - Books returned = 49 books.\n\n   Therefore, the number of books that were not returned is:\n   \\[\n   210 - 49 = 161 books\n   \\]\n\n2. **Determine the net change in the number of books:**\n   - Net increase in the number of books lent out = Total books lent out - Books returned = 35 - 49 = -14 books.\n\n3. **Calculate the total number of books borrowed and returned over the 6 days:**\n   - Total books borrowed = Total books lent out = 35 books.\n   - Total books returned = Books returned = 49 books.\n   \n   Therefore, the total number of books borrowed and returned over the 6 days is:\n   \\[\n   35 + 49 = 84 books\n   \\]\n\n4. **Determine the net change in the number",
+          "answer": 4
+        },
+        {
+          "raw": "To determine how many more books are out than came back, we need to calculate both the number of books that were borrowed and the number of books that were returned, and then find the difference between these two quantities.\n\n1. **Calculate the number of books borrowed:**\n   - The library lends out 35 books per day.\n   - Over 6 days, they lend out \\( 35 \\times 6 = 210 \\) books.\n   - Since 49 books are returned, the number of books that are neither borrowed nor returned is \\( 210 - 49 = 161 \\).\n\n2. **Determine the number of books that are out:**\n   - Total books lent out = 210\n   - Books returned = 49\n   - Therefore, the number of books that are out = \\( 210 - 49 = 161 \\).\n\n3. **Calculate the number of books that are not out (i.e., those that are either borrowed or returned):**\n   - Books not out = Total books lent out + Books returned - Books out\n   - Books not out = 210 + 49 - 161 =",
+          "answer": 161
+        },
+        {
+          "raw": "To determine how many more books are out than came back, we need to calculate both the number of books that were out and the number of books that were returned, and then find the difference between these two quantities.\n\n1. **Calculate the number of books that were out:**\n   - The library lends out 35 books per day.\n   - Over 6 days, 49 books are returned.\n   - Therefore, the number of books that were out is \\( 35 \\times 6 - 49 \\).\n\n\\[\n35 \\times 6 = 210\n\\]\n\n\\[\n210 - 49 = 161\n\\]\n\nSo, there are 161 books that were out.\n\n2. **Calculate the number of books that were returned:**\n   - The library lends out 35 books per day.\n   - Over 6 days, all 35 books are returned (since none were lent out).\n   - Therefore, the number of books that were returned is 35.\n\n3. **Calculate the difference between the number of books that were out and the number of books that were returned:**\n   - The number of books that were out is 161",
+          "answer": 161
+        },
+        {
+          "raw": "To determine how many more books are out than came back over the 6 days, we need to follow these steps:\n\n1. **Calculate the number of books that were not returned:**\n   - The library lends out 35 books per day.\n   - Over 6 days, \\( 35 \\times 6 = 210 \\) books were lent out.\n\n2. **Determine the number of books that were returned:**\n   - Out of the 210 books lent out, 49 were returned.\n\n3. **Find the difference between the number of books returned and the number of books lent out:**\n   - Books returned: 49\n   - Books lent out: 210\n   - Difference: \\( 49 - 210 = -161 \\)\n\nThe negative value indicates that there were actually fewer books lent out than returned. Therefore, the number of additional books that were out is:\n\n\\[\n\\boxed{161}\n\\]",
+          "answer": 161
+        }
+      ]
+    },
+    {
+      "id": "p09_cycling_club",
+      "text": "A cycling club rides 24 km on Saturday and 31 km on Sunday, every weekend. How many kilometres does the club ride in 6 weekends?",
+      "gold": 330,
+      "direct": {
+        "raw": "95",
+        "answer": 95
+      },
+      "chains": [
+        {
+          "raw": "To calculate the total distance ridden by the cycling club over 6 weekends, we need to consider both the distances ridden each day and how many days there are in those weekends.\n\n1. **Calculate the distance for one weekend:**\n   - On Saturday, the club rides 24 km.\n   - On Sunday, the club rides 31 km.\n   - Total distance per weekend = 24 km + 31 km = 55 km.\n\n2. **Determine the number of weekends:**\n   - There are 6 weekends in total.\n\n3. **Calculate the total distance for 6 weekends:**\n   - Total distance = Distance per weekend \u00d7 Number of weekends\n   - Total distance = 55 km/weekend \u00d7 6 weeks = 330 km.\n\nTherefore, the club rides a total of 330 kilometers over 6 weekends. \n\nAnswer: 330 kilometers",
+          "answer": 330
+        },
+        {
+          "raw": "To determine how many kilometers the cycling club rides over 6 weekends, we need to calculate the total distance for each weekend separately and then sum these distances.\n\n**Step 1: Calculate the distance for one weekend**\n- On Saturday, the club rides 24 km.\n- On Sunday, the club rides 31 km.\n- Therefore, the total distance for one weekend is:\n  \\[\n  24 \\text{ km} + 31 \\text{ km} = 55 \\text{ km}\n  \\]\n\n**Step 2: Calculate the distance for six weekends**\n- Since there are 6 weekends, we multiply the weekly distance by 6:\n  \\[\n  55 \\text{ km/weekend} \\times 6 \\text{ weekends} = 330 \\text{ km}\n  \\]\n\n**Final Answer:**\nThe club rides a total of **330 kilometers** over 6 weekends.",
+          "answer": 6
+        },
+        {
+          "raw": "To determine how many kilometers the cycling club rides over 6 weekends, we can follow these steps:\n\n1. Calculate the total distance ridden in one weekend.\n   - On Saturday, they ride 24 km.\n   - On Sunday, they ride 31 km.\n   - Therefore, the total distance for one weekend is \\(24 + 31 = 55\\) km.\n\n2. Multiply the weekly distance by 6 to find the total distance for 6 weekends.\n   - The weekly distance is 55 km.\n   - For 6 weekends, it would be \\(55 \\times 6 = 330\\) km.\n\nSo, the total distance ridden in 6 weekends is \\(\\boxed{330}\\) km.",
+          "answer": 330
+        },
+        {
+          "raw": "To determine how many kilometers the cycling club rides over 6 weekends, we need to calculate the total distance for one weekend and then multiply that by 6.\n\nFirst, let's find out how far the club rides each weekend:\n- On Saturday, they ride 24 km.\n- On Sunday, they ride 31 km.\n\nAdding these distances together gives us the total distance for one weekend:\n\\[ 24 \\text{ km} + 31 \\text{ km} = 55 \\text{ km} \\]\n\nNext, we need to find out how many kilometers they ride in 6 weekends:\n\\[ 55 \\text{ km/weekend} \\times 6 \\text{ weekends} = 330 \\text{ km} \\]\n\nTherefore, the club rides a total of **330 km** over 6 weekends.",
+          "answer": 6
+        },
+        {
+          "raw": "To calculate the total distance the cycling club rides over 6 weekends, we need to consider both the distances ridden on Saturday and Sunday.\n\nOn Saturday:\n- The club rides 24 km.\n- On Sunday:\n  - They ride an additional 31 km.\n\nSo, the total distance for one weekend is:\n\\[ 24 \\text{ km} + 31 \\text{ km} = 55 \\text{ km} \\]\n\nSince there are 6 weekends, the total distance for 6 weekends would be:\n\\[ 55 \\text{ km/weekend} \\times 6 \\text{ weekends} = 330 \\text{ km} \\]\n\nTherefore, the answer is:\n\\[\n\\boxed{330}\n\\]",
+          "answer": 330
+        },
+        {
+          "raw": "To determine how many kilometers the cycling club rides over 6 weekends, we can break down the problem into smaller steps:\n\n1. **Calculate the distance ridden in one weekend:**\n   - On Saturday, the club rides 24 km.\n   - On Sunday, the club rides 31 km.\n   - Therefore, the total distance ridden in one weekend is:\n     \\[\n     24 \\text{ km} + 31 \\text{ km} = 55 \\text{ km}\n     \\]\n\n2. **Determine the distance ridden per weekend:**\n   - The club rides 55 km each weekend.\n\n3. **Calculate the total distance for 6 weekends:**\n   - Multiply the distance ridden per weekend by the number of weekends:\n     \\[\n     55 \\text{ km/weekend} \\times 6 \\text{ weekends} = 330 \\text{ km}\n     \\]\n\nThus, the total distance ridden by the club in 6 weekends is \\(\\boxed{330}\\) kilometers.",
+          "answer": 330
+        },
+        {
+          "raw": "To determine how many kilometers the cycling club rides over 6 weekends, we need to calculate the total distance for each weekend separately and then sum these distances.\n\n**Step 1: Calculate the distance for one weekend**\n- On Saturday, the club rides 24 km.\n- On Sunday, the club rides 31 km.\n- Therefore, the total distance for one weekend is:\n  \\[\n  24 \\text{ km} + 31 \\text{ km} = 55 \\text{ km}\n  \\]\n\n**Step 2: Calculate the distance for six weekends**\n- Since there are 6 weekends, we multiply the weekly distance by 6:\n  \\[\n  55 \\text{ km/weekend} \\times 6 \\text{ weeks} = 330 \\text{ km}\n  \\]\n\nThus, the total distance the club rides over 6 weekends is **330 km**.",
+          "answer": 330
+        },
+        {
+          "raw": "To determine how many kilometers the cycling club rides over 6 weekends, we need to calculate the total distance for one weekend and then multiply that by 6.\n\nFirst, let's find out how many kilometers the club rides in one weekend:\n- On Saturday, they ride 24 km.\n- On Sunday, they ride 31 km.\nSo, the total distance for one weekend is:\n\\[ 24 \\text{ km} + 31 \\text{ km} = 55 \\text{ km} \\]\n\nNext, we need to find out how many kilometers they ride in 6 weekends:\n\\[ 55 \\text{ km/weekend} \\times 6 \\text{ weekends} = 330 \\text{ km} \\]\n\nTherefore, the club rides a total of \\(\\boxed{330}\\) kilometers over 6 weekends.",
+          "answer": 6
+        },
+        {
+          "raw": "To calculate the total distance the cycling club rides over 6 weekends, we need to consider both the distances they ride each day and the number of days in the span of these 6 weekends.\n\nFirst, let's break down the weekly riding:\n- On Saturday, they ride 24 km.\n- On Sunday, they ride 31 km.\n\nThis means that over one week (Saturday + Sunday), they cover:\n\\[ 24 \\text{ km} + 31 \\text{ km} = 55 \\text{ km} \\]\n\nNow, for 6 weeks, we multiply the weekly distance by 6:\n\\[ 55 \\text{ km/week} \\times 6 \\text{ weeks} = 330 \\text{ km} \\]\n\nTherefore, the total distance the club rides in 6 weekends is **330 km**.",
+          "answer": 330
+        }
+      ]
+    },
+    {
+      "id": "p10_aquarium_tickets",
+      "text": "Aquarium tickets cost $14 each. A family buys 6 tickets. How much do they pay?",
+      "gold": 84,
+      "direct": {
+        "raw": "94",
+        "answer": 94
+      },
+      "chains": [
+        {
+          "raw": "To determine how much the family pays for 6 aquarium tickets, we need to follow these steps:\n\n1. Identify the cost of one ticket.\n2. Multiply the cost of one ticket by the number of tickets purchased.\n\nStep 1: The cost of one ticket is $14.\n\nStep 2: The family buys 6 tickets. Therefore, we multiply the cost of one ticket by 6:\n\\[ 14 \\text{ dollars/ticket} \\times 6 \\text{ tickets} = 84 \\text{ dollars} \\]\n\nSo, the total amount the family pays is \\(\\boxed{84}\\).",
+          "answer": 84
+        },
+        {
+          "raw": "To determine how much the family pays for 6 aquarium tickets, we need to follow these steps:\n\n1. Identify the cost of one ticket.\n2. Multiply the number of tickets by the cost per ticket.\n\nStep 1: The cost of one aquarium ticket is given as $14.\n\nStep 2: To find out how much it costs to buy 6 tickets, we multiply the number of tickets (6) by the cost per ticket ($14).\n\n\\[ \\text{Total cost} = 6 \\times 14 \\]\n\nNow, perform the multiplication:\n\n\\[ 6 \\times 14 = 84 \\]\n\nTherefore, the total amount the family pays for 6 aquarium tickets is **$84**.\n\nAnswer: $84",
+          "answer": 84
+        },
+        {
+          "raw": "To determine how much the family pays for 6 aquarium tickets at $14 each, we can follow these steps:\n\nStep 1: Identify the number of tickets purchased.\nThe family buys 6 tickets.\n\nStep 2: Determine the cost per ticket.\nEach ticket costs $14.\n\nStep 3: Calculate the total cost by multiplying the number of tickets by the cost per ticket.\nTotal cost = Number of tickets \u00d7 Cost per ticket\nTotal cost = 6 \u00d7 14\n\nStep 4: Perform the multiplication.\n6 \u00d7 14 = 84\n\nTherefore, the family pays **$84** for 6 aquarium tickets.\n\nAnswer:\nAnswer: $84",
+          "answer": 84
+        },
+        {
+          "raw": "To determine how much the family pays for 6 aquarium tickets at $14 each, we can follow these steps:\n\n1. **Identify the cost per ticket**: Each aquarium ticket costs $14.\n\n2. **Determine the number of tickets purchased**: The family buys 6 tickets.\n\n3. **Calculate the total cost**: To find the total amount paid, multiply the cost per ticket by the number of tickets:\n   \\[\n   \\text{Total Cost} = \\text{Cost per Ticket} \\times \\text{Number of Tickets}\n   \\]\n   Substituting the given values:\n   \\[\n   \\text{Total Cost} = 14 \\times 6\n   \\]\n\n4. **Perform the multiplication**:\n   \\[\n   14 \\times 6 = 84\n   \\]\n\nTherefore, the family pays **$84** in total for the 6 aquarium tickets.",
+          "answer": 6
+        },
+        {
+          "raw": "To determine how much the family pays for 6 aquarium tickets at $14 each, we can follow these steps:\n\n1. **Identify the cost of one ticket**: Each ticket costs $14.\n2. **Determine the number of tickets purchased**: The family buys 6 tickets.\n3. **Calculate the total cost**: To find the total cost, we multiply the price of one ticket by the number of tickets.\n\n\\[\n\\text{Total cost} = \\text{Cost per ticket} \\times \\text{Number of tickets}\n\\]\n\nSubstitute the given values into the equation:\n\n\\[\n\\text{Total cost} = 14 \\times 6\n\\]\n\nPerform the multiplication:\n\n\\[\n14 \\times 6 = 84\n\\]\n\nTherefore, the family pays $\\boxed{84}$ dollars in total.",
+          "answer": 84
+        },
+        {
+          "raw": "To determine how much a family pays for 6 aquarium tickets, we need to multiply the cost of one ticket by the number of tickets purchased.\n\nStep 1: Identify the cost of one ticket.\nThe cost of one ticket is $14.\n\nStep 2: Identify the number of tickets purchased.\nThe family bought 6 tickets.\n\nStep 3: Calculate the total cost by multiplying the cost per ticket by the number of tickets.\nTotal cost = Cost per ticket \u00d7 Number of tickets\nTotal cost = $14 \u00d7 6\n\nStep 4: Perform the multiplication.\n$14 \u00d7 6 = $84\n\nTherefore, the family pays **$84** for 6 aquarium tickets.\n\nAnswer:\nAnswer: $84",
+          "answer": 84
+        },
+        {
+          "raw": "To determine how much a family pays for 6 aquarium tickets, we need to follow these steps:\n\n1. Identify the cost of one ticket.\n2. Multiply the cost of one ticket by the number of tickets purchased.\n\nStep-by-step calculation:\n- The cost of one aquarium ticket is $14.\n- The family is buying 6 tickets.\n\nSo, we multiply $14 by 6:\n\\[ 14 \\times 6 = 84 \\]\n\nTherefore, the total amount paid by the family for 6 aquarium tickets is $84.\n\nAnswer: 84",
+          "answer": 84
+        },
+        {
+          "raw": "To determine how much a family pays for 6 aquarium tickets when each ticket costs $14, we can follow these steps:\n\n1. Identify the number of tickets bought: 6 tickets.\n2. Identify the cost per ticket: $14.\n\nNow, multiply the number of tickets by the cost per ticket to find the total cost:\n\\[\n6 \\text{ tickets} \\times 14 \\text{ dollars/ticket} = 84 \\text{ dollars}\n\\]\n\nTherefore, the family pays $\\boxed{84}$ dollars for 6 aquarium tickets.",
+          "answer": 6
+        },
+        {
+          "raw": "To determine how much a family pays for 6 aquarium tickets, we need to follow these steps:\n\n1. Identify the cost of one ticket.\n2. Multiply the number of tickets by the cost per ticket.\n\nGiven:\n- The cost of one ticket is $14.\n- The family buys 6 tickets.\n\nStep-by-step calculation:\n1. Cost of one ticket = $14\n2. Number of tickets = 6\n\nTotal cost = Cost of one ticket \u00d7 Number of tickets\nTotal cost = $14 \u00d7 6\nTotal cost = $84\n\nTherefore, the family pays $\\boxed{84}$ dollars for 6 aquarium tickets.",
+          "answer": 6
+        }
+      ]
+    },
+    {
+      "id": "p11_farm_cartons",
+      "text": "A farm stand collects 132 eggs and packs them in cartons of 12 eggs. It then sells 7 cartons. How many cartons remain?",
+      "gold": 4,
+      "direct": {
+        "raw": "5",
+        "answer": 5
+      },
+      "chains": [
+        {
+          "raw": "To determine how many cartons remain after selling 7 cartons, we can follow these steps:\n\n1. **Calculate the total number of eggs collected**: The farm stand collects 132 eggs.\n2. **Determine the number of eggs per carton**: Each carton holds 12 eggs.\n3. **Calculate the total number of eggs that were packed into cartons**: We divide the total number of eggs by the number of eggs per carton.\n\n\\[\n\\text{Total eggs} = \\frac{\\text{Total eggs}}{\\text{Eggs per carton}} = \\frac{132}{12}\n\\]\n\n4. **Perform the division**:\n\n\\[\n\\frac{132}{12} = 11\n\\]\n\nSo, there are 11 cartons filled with eggs.\n\n5. **Subtract the number of sold cartons from the initial number of cartons**: Since 7 cartons were sold, we subtract this from the initial number of cartons.\n\n\\[\n\\text{Remaining cartons} = \\text{Initial cartons} - \\text{Cartons sold} = 11 - 7\n\\]\n\n6. **Perform the subtraction**:\n\n",
+          "answer": 6
+        },
+        {
+          "raw": "To determine how many cartons remain after selling 7 cartons, we need to follow these steps:\n\n1. Calculate the total number of eggs in the 7 sold cartons.\n2. Subtract this number from the original number of eggs to find out how many eggs are left.\n3. Determine how many full cartons can be packed with the remaining eggs.\n\nStep 1: Calculate the total number of eggs in the 7 sold cartons.\nEach carton contains 12 eggs, so:\n\\[ 7 \\text{ cartons} \\times 12 \\text{ eggs/carton} = 84 \\text{ eggs} \\]\n\nStep 2: Subtract the number of eggs used in the 7 cartons from the original number of eggs.\nThe original number of eggs is 132, so:\n\\[ 132 \\text{ eggs} - 84 \\text{ eggs} = 48 \\text{ eggs} \\]\n\nStep 3: Determine how many full cartons can be packed with the remaining eggs.\nSince each carton holds 12 eggs, we divide the number of remaining eggs by the number of eggs per carton:\n\\[ 48 \\text{ eggs} \\div ",
+          "answer": 48
+        },
+        {
+          "raw": "To determine how many cartons remain after selling 7 cartons from a collection of 132 eggs, we can follow these steps:\n\n1. **Calculate the total number of eggs in the original collection:**\n   \\[\n   \\text{Total eggs} = 132\n   \\]\n\n2. **Determine how many eggs are packed into each carton:**\n   Each carton holds 12 eggs.\n\n3. **Find out how many eggs are left after packing:**\n   Subtract the number of eggs in the sold cartons from the total number of eggs:\n   \\[\n   \\text{Eggs remaining} = 132 - (7 \\times 12)\n   \\]\n   Calculate \\(7 \\times 12\\):\n   \\[\n   7 \\times 12 = 84\n   \\]\n   So,\n   \\[\n   \\text{Eggs remaining} = 132 - 84 = 48\n   \\]\n\nTherefore, the number of cartons that remain is \\(\\boxed{48}\\).",
+          "answer": 48
+        },
+        {
+          "raw": "To determine how many cartons remain after selling some, we can follow these steps:\n\n1. **Calculate the total number of eggs sold**: The problem states that the farm stand sells 7 cartons of eggs.\n   \n   \\[\n   \\text{Total eggs sold} = 7 \\text{ cartons} \\times 12 \\text{ eggs per carton} = 84 \\text{ eggs}\n   \\]\n\n2. **Subtract the number of eggs sold from the initial total**: The farm stand starts with 132 eggs.\n\n   \\[\n   \\text{Eggs remaining} = 132 \\text{ eggs} - 84 \\text{ eggs} = 48 \\text{ eggs}\n   \\]\n\nTherefore, the number of cartons that remain is:\n\n\\[\n\\boxed{48}\n\\]",
+          "answer": 48
+        },
+        {
+          "raw": "To determine how many cartons remain after selling some, we can follow these steps:\n\n1. **Calculate the total number of cartons that were initially packed:**\n   The farm stand collected 132 eggs, and each carton holds 12 eggs.\n   \\[\n   \\text{Total cartons} = \\frac{\\text{Total eggs}}{\\text{Eggs per carton}} = \\frac{132}{12}\n   \\]\n   Performing the division:\n   \\[\n   \\frac{132}{12} = 11\n   \\]\n   So, there were initially 11 cartons.\n\n2. **Determine how many cartons were sold:**\n   It was stated that 7 cartons were sold.\n\n3. **Calculate the number of cartons remaining:**\n   Subtract the number of cartons sold from the initial number of cartons.\n   \\[\n   \\text{Cartons remaining} = \\text{Initial cartons} - \\text{Cartons sold} = 11 - 7\n   \\]\n   Performing the subtraction:\n   \\[\n   11 - 7 = 4\n   \\]\n\nTherefore, the number of cart",
+          "answer": 4
+        },
+        {
+          "raw": "To determine how many cartons remain after selling some eggs, we can follow these steps:\n\n1. **Calculate the total number of eggs collected**: The farm stand collects 132 eggs.\n2. **Determine how many eggs fit into one carton**: Each carton holds 12 eggs.\n3. **Find out how many eggs fit into 7 cartons**: \n   \\[\n   12 \\text{ eggs/carton} \\times 7 \\text{ cartons} = 84 \\text{ eggs}\n   \\]\n4. **Subtract the number of eggs sold from the total number of eggs**: \n   \\[\n   132 \\text{ eggs} - 84 \\text{ eggs} = 48 \\text{ eggs}\n   \\]\n\nTherefore, the number of cartons that remain is:\n\\[\n\\boxed{48}\n\\]",
+          "answer": 48
+        },
+        {
+          "raw": "To solve this problem, let's break it down into steps:\n\n1. **Determine the total number of eggs collected**: The farm stand initially collected 132 eggs.\n   \n2. **Calculate how many eggs were packed in cartons**:\n   - Each carton holds 12 eggs.\n   - To find out how many cartons can be made from 132 eggs, we divide the total number of eggs by the number of eggs per carton.\n\n\\[\n\\text{Number of cartons} = \\frac{\\text{Total number of eggs}}{\\text{Eggs per carton}} = \\frac{132}{12}\n\\]\n\n3. **Perform the division** to find the number of cartons:\n\n\\[\n\\frac{132}{12} = 11\n\\]\n\nSo, 11 cartons were filled with eggs.\n\n4. **Calculate the number of eggs remaining after selling 7 cartons**:\n   - Each carton contains 12 eggs.\n   - If 11 cartons were sold, then the remaining number of eggs is:\n\n\\[\n\\text{Remaining eggs} = \\text{Total eggs} - (\\text{Cartons sold",
+          "answer": 11
+        },
+        {
+          "raw": "To determine how many cartons remain after selling some, we can follow these steps:\n\n1. **Calculate the total number of cartons initially collected:**\n   The farm stand collects 132 eggs, and each carton holds 12 eggs.\n   \\[\n   \\text{Total cartons} = \\frac{132}{12} = 11\n   \\]\n\n2. **Determine how many eggs are sold:**\n   It is stated that 7 cartons were sold.\n\n3. **Calculate the number of eggs remaining after the sale:**\n   Subtract the number of eggs sold from the initial total:\n   \\[\n   \\text{Eggs remaining} = 132 - (7 \\times 12) = 132 - 84 = 48\n   \\]\n\n4. **Determine the number of cartons remaining:**\n   Since each carton now contains 12 eggs, divide the remaining eggs by the number of eggs per carton to find out how many full cartons there are left:\n   \\[\n   \\text{Cartons remaining} = \\left\\lfloor \\frac{48}{12} \\right\\rfloor =",
+          "answer": 12
+        },
+        {
+          "raw": "To solve this problem, we need to follow these steps:\n\n1. Determine how many eggs are left after packing into cartons.\n2. Calculate how many cartons can be filled from those remaining eggs.\n\nLet's start with the first step:\n\n**Step 1: Determine how many eggs are left after packing into cartons.**\n\nThe farm stand starts with 132 eggs and packs them into cartons of 12 eggs each. To find out how many cartons they can pack, we divide the total number of eggs by the number of eggs per carton:\n\n\\[ \\text{Number of cartons} = \\frac{\\text{Total number of eggs}}{\\text{Eggs per carton}} = \\frac{132}{12} \\]\n\nPerforming the division gives us:\n\n\\[ \\frac{132}{12} = 11 \\]\n\nSo, 11 cartons can be packed with the eggs.\n\nNext, let's move on to the second step:\n\n**Step 2: Calculate how many cartons can be filled from those remaining eggs.**\n\nNow that we know 11 cartons can hold 120 eggs (since \\(12 \\times 11 = ",
+          "answer": 11
+        }
+      ]
+    },
+    {
+      "id": "p12_workshop_chairs",
+      "text": "A workshop makes 18 chairs per week. It has an order for 144 chairs. After 5 weeks, the customer increases the order by 36 chairs. How many more weeks does the workshop need to finish the order?",
+      "gold": 5,
+      "direct": {
+        "raw": "To determine how many more weeks the workshop needs to finish the order, we can follow these steps:\n\n1. Calculate the total number of chairs already made in 5 weeks.\n2. Determine the remaining number of chairs needed after the initial order",
+        "answer": 2
+      },
+      "chains": [
+        {
+          "raw": "To determine how many more weeks the workshop needs to finish the order after increasing the initial order by 36 chairs, we can follow these steps:\n\n1. **Calculate the total number of chairs needed:**\n   The original order is 144 chairs. The customer increases this by 36 chairs.\n   \\[\n   \\text{Total required} = 144 + 36 = 180 \\text{ chairs}\n   \\]\n\n2. **Determine the current weekly production capacity:**\n   The workshop currently produces 18 chairs per week.\n\n3. **Calculate the remaining chairs needed after the increase:**\n   Subtract the current weekly production from the total required:\n   \\[\n   \\text{Remaining chairs} = 180 - 18 = 162 \\text{ chairs}\n   \\]\n\n4. **Determine the number of additional weeks needed:**\n   Divide the remaining chairs by the current weekly production to find out how many more weeks are needed:\n   \\[\n   \\text{Additional weeks needed} = \\frac{162}{18} = 9 \\text{ weeks}\n   \\]\n\nTherefore, the workshop needs to finish the order in 9 more weeks.\n\n",
+          "answer": 9
+        },
+        {
+          "raw": "To determine how many more weeks the workshop needs to finish the order after increasing its production capacity, we can follow these steps:\n\n1. **Calculate the total number of chairs produced in the first 5 weeks:**\n   The workshop produces 18 chairs per week and orders 144 chairs.\n   \\[\n   \\text{Chairs produced in 5 weeks} = 18 \\times 5 = 90\n   \\]\n\n2. **Determine the new order amount after the increase:**\n   The customer's order is increased by 36 chairs.\n   \\[\n   \\text{New order amount} = 144 + 36 = 180\n   \\]\n\n3. **Calculate the number of additional chairs needed to meet the new order amount:**\n   Subtract the number of chairs already produced from the new order amount.\n   \\[\n   \\text{Additional chairs needed} = 180 - 90 = 90\n   \\]\n\n4. **Determine the number of additional weeks required to produce the additional chairs:**\n   Divide the additional chairs needed by the weekly production rate.\n   \\[\n   \\text{Additional weeks required} = \\frac{90}{",
+          "answer": 90
+        },
+        {
+          "raw": "To determine how many more weeks the workshop needs to finish the order after increasing the initial order by 36 chairs, we can follow these steps:\n\n1. **Calculate the total number of chairs ordered initially:**\n   - The initial order is 144 chairs.\n   - The customer increases this order by 36 chairs.\n   - Therefore, the new order is \\( 144 + 36 = 180 \\) chairs.\n\n2. **Determine the number of chairs that can be produced in one week:**\n   - The workshop produces 18 chairs per week.\n\n3. **Calculate the number of additional chairs needed:**\n   - The workshop needs 180 chairs but only has enough to produce 180 chairs.\n   - Therefore, the number of additional chairs needed is \\( 180 - 180 = 0 \\).\n\nSince the number of additional chairs needed (0) is less than the number of chairs the workshop can produce in one week (18), the workshop will not need any additional weeks to complete the order.\n\nThus, the answer is:\n\\[\n\\boxed{0}\n\\]",
+          "answer": 0
+        },
+        {
+          "raw": "To determine how many more weeks the workshop needs to finish the order, we can break down the problem into several steps:\n\n1. **Calculate the total number of chairs made in the first 5 weeks:**\n   - The workshop makes 18 chairs per week.\n   - Over 5 weeks, it makes \\( 18 \\times 5 = 90 \\) chairs.\n\n2. **Determine the remaining number of chairs needed after the initial 5 weeks:**\n   - The customer ordered 144 chairs initially and increased the order by 36 chairs.\n   - Therefore, the total number of chairs required is \\( 144 + 36 = 180 \\).\n\n3. **Calculate the number of additional chairs needed after 5 weeks:**\n   - Subtract the number of chairs already made from the total number of chairs required:\n     \\[\n     180 - 90 = 90\n     \\]\n\n4. **Determine the number of additional weeks needed to make the remaining chairs:**\n   - Since the workshop makes 18 chairs per week, we divide the number of additional chairs by the weekly production rate:\n     \\[\n     \\frac{90}{18}",
+          "answer": 18
+        },
+        {
+          "raw": "To determine how many additional weeks the workshop needs to complete the order after increasing the initial order by 36 chairs, we can follow these steps:\n\n1. **Calculate the total number of chairs needed after the increase in orders:**\n   - The original order is for 144 chairs.\n   - The new order is increased by 36 chairs.\n   - Therefore, the total number of chairs needed is:\n     \\[\n     144 + 36 = 180 \\text{ chairs}\n     \\]\n\n2. **Determine the weekly production capacity of the workshop:**\n   - The workshop produces 18 chairs per week.\n\n3. **Calculate the number of weeks required to produce 180 chairs:**\n   - We divide the total number of chairs needed by the weekly production capacity:\n     \\[\n     \\frac{180}{18} = 10 \\text{ weeks}\n     \\]\n\nTherefore, the workshop needs 10 more weeks to complete the order after increasing the initial order by 36 chairs. \n\n\\[\n\\boxed{10}\n\\]",
+          "answer": 10
+        },
+        {
+          "raw": "To determine how many additional weeks the workshop needs to complete the order, we can follow these steps:\n\n1. **Calculate the total number of chairs made in 5 weeks:**\n   - The workshop makes 18 chairs per week.\n   - In 5 weeks, it makes \\( 18 \\times 5 = 90 \\) chairs.\n\n2. **Determine the total number of chairs needed after the increase:**\n   - The original order was for 144 chairs.\n   - With the increase of 36 chairs, the new order is \\( 144 + 36 = 180 \\) chairs.\n\n3. **Calculate the number of chairs still needed to be made:**\n   - Subtract the number of chairs already made from the total required:\n     \\[\n     180 - 90 = 90\n     \\]\n   - So, there are 90 chairs left to be made.\n\n4. **Determine the number of additional weeks needed to make the remaining chairs:**\n   - The workshop makes 18 chairs per week.\n   - To find out how many weeks it will take to make the remaining 90 chairs, divide the remaining number of chairs by",
+          "answer": 90
+        },
+        {
+          "raw": "To determine how many more weeks the workshop needs to finish the order after increasing its production capacity by 36 chairs, we can follow these steps:\n\n1. **Calculate the total number of chairs produced in the first 5 weeks:**\n   The workshop produces 18 chairs per week.\n   \\[\n   18 \\text{ chairs/week} \\times 5 \\text{ weeks} = 90 \\text{ chairs}\n   \\]\n\n2. **Determine the new total number of chairs needed after the increase:**\n   The order is for 144 chairs.\n\n3. **Calculate the remaining number of chairs required:**\n   \\[\n   144 \\text{ chairs} - 90 \\text{ chairs} = 54 \\text{ chairs}\n   \\]\n\n4. **Determine the number of additional weeks needed to produce the remaining chairs:**\n   The workshop currently produces 18 chairs per week.\n   \\[\n   \\frac{54 \\text{ chairs}}{18 \\text{ chairs/week}} = 3 \\text{ weeks}\n   \\]\n\nTherefore, the workshop needs \\(\\boxed{3}\\) more weeks to finish the order after increasing its production capacity",
+          "answer": 3
+        },
+        {
+          "raw": "To determine how many more weeks the workshop needs to finish the order after increasing the order by 36 chairs, we can follow these steps:\n\n1. **Calculate the number of chairs already made in the first 5 weeks:**\n   - The workshop makes 18 chairs per week.\n   - In 5 weeks, it will make \\( 18 \\times 5 = 90 \\) chairs.\n\n2. **Determine the total number of chairs needed:**\n   - The customer ordered 144 chairs in total.\n\n3. **Calculate the remaining number of chairs needed:**\n   - Subtract the number of chairs already made from the total required.\n   - Remaining chairs needed = \\( 144 - 90 = 54 \\).\n\n4. **Calculate the number of additional weeks needed:**\n   - The workshop makes 18 chairs per week.\n   - To find out how many more weeks are needed to make the remaining 54 chairs, divide the remaining number of chairs by the weekly production rate.\n   - Additional weeks needed = \\( \\frac{54}{18} = 3 \\).\n\nTherefore, the workshop needs to finish the order in 3 more weeks.\n\n**Answer:** 3",
+          "answer": 3
+        },
+        {
+          "raw": "To determine how many more weeks the workshop needs to finish the order after increasing the initial order by 36 chairs, we can follow these steps:\n\n1. Calculate the total number of chairs that were originally planned to be made.\n2. Determine the new total number of chairs ordered after the increase.\n3. Calculate the number of additional chairs needed to make up for the increased order.\n4. Determine how many weeks it will take to make up the remaining chair count.\n\n**Step 1: Calculate the total number of chairs originally planned to be made.**\n\nThe original order is for 144 chairs and the workshop plans to make 18 chairs per week. Therefore, the total number of chairs planned to be made initially is:\n\\[ 144 \\text{ chairs} \\]\n\n**Step 2: Determine the new total number of chairs ordered after the increase.**\n\nAfter the order is increased by 36 chairs, the new total number of chairs ordered is:\n\\[ 144 + 36 = 180 \\text{ chairs} \\]\n\n**Step 3: Calculate the number of additional chairs needed to make up for the increased order.**\n\nSince the workshop already planned to make 18 chairs per week, the",
+          "answer": 18
+        }
+      ]
+    },
+    {
+      "id": "p13_raffle_boxes",
+      "text": "At a school fair, 240 raffle tickets are printed. Class A sells 95 tickets and Class B sells 77 tickets. The unsold tickets are split equally between 2 boxes. How many unsold tickets go in each box?",
+      "gold": 34,
+      "direct": {
+        "raw": "13",
+        "answer": 13
+      },
+      "chains": [
+        {
+          "raw": "To determine how many unsold tickets go in each box, we need to follow these steps:\n\n1. Calculate the total number of unsold tickets.\n2. Split the unsold tickets equally between two boxes.\n\nFirst, let's find out how many unsold tickets there are:\n\\[ \\text{Total tickets} - \\text{Tickets sold} = \\text{Unsold tickets} \\]\n\\[ 240 - (95 + 77) = 240 - 172 = 68 \\]\n\nSo, there are 68 unsold tickets.\n\nNext, we need to split these 68 unsold tickets equally between 2 boxes. We do this by dividing 68 by 2:\n\\[ 68 \\div 2 = 34 \\]\n\nTherefore, each box contains 34 unsold tickets.\n\nThe answer is:\n\\[\n\\boxed{34}\n\\]",
+          "answer": 34
+        },
+        {
+          "raw": "To determine how many unsold tickets go into each box, we need to follow these steps:\n\n1. **Calculate the number of sold tickets:**\n   - Total tickets printed: 240\n   - Tickets sold by Class A: 95\n   - Tickets sold by Class B: 77\n\n   \\[\n   \\text{Total tickets sold} = 95 + 77 = 172\n   \\]\n\n2. **Determine the number of unsold tickets:**\n   - Total tickets printed: 240\n   - Total tickets sold: 172\n\n   \\[\n   \\text{Unsold tickets} = 240 - 172 = 68\n   \\]\n\n3. **Split the unsold tickets equally between two boxes:**\n   - Total unsold tickets: 68\n   - Number of boxes: 2\n\n   \\[\n   \\text{Tickets per box} = \\frac{68}{2} = 34\n   \\]\n\nTherefore, the number of unsold tickets that goes into each box is \\( \\boxed{34} \\).",
+          "answer": 34
+        },
+        {
+          "raw": "To determine how many unsold tickets go into each box, we can follow these steps:\n\n1. Calculate the total number of tickets sold by both classes.\n   - Class A sold 95 tickets.\n   - Class B sold 77 tickets.\n   - Total tickets sold = 95 + 77 = 172 tickets.\n\n2. Determine how many tickets remain after Class A and Class B have sold their tickets.\n   - Total tickets available = 240 tickets.\n   - Tickets sold = 172 tickets.\n   - Remaining tickets = 240 - 172 = 68 tickets.\n\n3. Split the remaining tickets equally between two boxes.\n   - Number of tickets per box = Remaining tickets / 2.\n   - Number of tickets per box = 68 / 2 = 34 tickets.\n\nTherefore, the number of unsold tickets that goes into each box is \\boxed{34}.",
+          "answer": 34
+        },
+        {
+          "raw": "To determine how many unsold tickets go into each of the two boxes, we can follow these steps:\n\n1. **Calculate the number of unsold tickets for Class A:**\n   - Total tickets sold by Class A: 95\n   - Tickets sold by Class B: 77\n   - Unsold tickets for Class A = Total tickets - Sold tickets\n   \\[\n   95 - 77 = 18\n   \\]\n   So, Class A has 18 unsold tickets.\n\n2. **Determine the total number of unsold tickets:**\n   - Total unsold tickets = Unsold tickets for Class A + Unsold tickets for Class B\n   \\[\n   18 + 77 = 95\n   \\]\n\n3. **Split the unsold tickets equally between the two boxes:**\n   - Number of unsold tickets per box = Total unsold tickets / 2\n   \\[\n   95 / 2 = 47.5\n   \\]\n\nSince we cannot have half an unsold ticket in this context (as it doesn't make sense), we need to re-evaluate our approach. Let's consider that the problem might have a different interpretation or",
+          "answer": 47.5
+        },
+        {
+          "raw": "To determine how many unsold tickets go in each box, we need to follow these steps:\n\n1. **Calculate the total number of tickets sold:**\n   - Class A sold 95 tickets.\n   - Class B sold 77 tickets.\n   - Total tickets sold = 95 + 77\n\n\\[\n95 + 77 = 172\n\\]\n\n2. **Determine the number of unsold tickets:**\n   - There were initially 240 tickets printed.\n\n3. **Subtract the number of tickets sold from the total number of tickets:**\n   - Unsold tickets = Total tickets - Tickets sold\n\n\\[\n240 - 172 = 68\n\\]\n\n4. **Divide the unsold tickets equally into two boxes:**\n   - Each box will have half of the unsold tickets.\n\n\\[\n\\frac{68}{2} = 34\n\\]\n\nTherefore, the number of unsold tickets that go in each box is \\boxed{34}.",
+          "answer": 34
+        },
+        {
+          "raw": "To determine how many unsold tickets go into each of the two boxes, we need to follow these steps:\n\n1. **Calculate the number of sold tickets**:\n   - Total tickets printed: \\( 240 \\)\n   - Tickets sold by Class A: \\( 95 \\)\n   - Tickets sold by Class B: \\( 77 \\)\n\n   So, the total number of tickets sold is:\n   \\[\n   95 + 77 = 172\n   \\]\n\n2. **Determine the number of remaining tickets**:\n   - Total tickets printed: \\( 240 \\)\n   - Tickets sold: \\( 172 \\)\n   - Remaining tickets:\n   \\[\n   240 - 172 = 68\n   \\]\n\n3. **Split the remaining tickets equally between the two boxes**:\n   - Total remaining tickets: \\( 68 \\)\n   - Number of boxes: \\( 2 \\)\n\n   Each box will receive:\n   \\[\n   \\frac{68}{2} = 34\n   \\]\n\nTherefore, the number of unsold tickets that goes into each box is \\(\\boxed{34}\\).",
+          "answer": 34
+        },
+        {
+          "raw": "To determine how many unsold tickets go into each box, we need to follow these steps:\n\n1. **Calculate the number of sold tickets for each class:**\n   - Class A sold 95 tickets.\n   - Class B sold 77 tickets.\n\n2. **Find the total number of sold tickets:**\n   \\[\n   95 + 77 = 172\n   \\]\n\n3. **Determine the number of unsold tickets:**\n   Since there are 240 tickets in total, subtract the number of sold tickets from the total:\n   \\[\n   240 - 172 = 68\n   \\]\n\n4. **Split the unsold tickets equally between two boxes:**\n   To find out how many tickets go into each box, divide the total unsold tickets by 2:\n   \\[\n   68 \\div 2 = 34\n   \\]\n\nTherefore, the number of unsold tickets that goes into each box is \\boxed{34}.",
+          "answer": 34
+        },
+        {
+          "raw": "To determine how many unsold tickets go in each box, we can follow these steps:\n\n1. **Calculate the total number of sold tickets:**\n   - Class A sold 95 tickets.\n   - Class B sold 77 tickets.\n   - Total sold tickets = 95 + 77 = 172 tickets.\n\n2. **Determine the number of unsold tickets:**\n   - Total tickets printed = 240.\n   - Unsold tickets = Total tickets - Sold tickets = 240 - 172 = 68 tickets.\n\n3. **Split the unsold tickets equally into 2 boxes:**\n   - Number of unsold tickets per box = Total unsold tickets \u00f7 Number of boxes = 68 \u00f7 2 = 34 tickets per box.\n\nTherefore, the number of unsold tickets that go in each box is \\boxed{34}.",
+          "answer": 34
+        },
+        {
+          "raw": "To determine how many unsold tickets go in each box, we need to follow these steps:\n\n1. Calculate the total number of sold tickets.\n2. Determine the number of unsold tickets after Class A and Class B have sold their tickets.\n3. Split the remaining unsold tickets equally between the two boxes.\n\nFirst, let's calculate the total number of sold tickets:\n\\[ \\text{Total sold tickets} = 95 + 77 = 172 \\]\n\nNext, we subtract the number of sold tickets from the total number of tickets to find out how many unsold tickets there are initially:\n\\[ \\text{Unsold tickets} = 240 - 172 = 68 \\]\n\nNow, we need to split these 68 unsold tickets equally between the two boxes. Since the tickets are split equally, we divide 68 by 2:\n\\[ \\text{Tickets per box} = \\frac{68}{2} = 34 \\]\n\nTherefore, the number of unsold tickets that goes into each box is:\n\\[ \\boxed{34} \\]",
+          "answer": 34
+        }
+      ]
+    },
+    {
+      "id": "p14_caterer_trays",
+      "text": "A caterer prepares 380 sandwiches and packs them 10 to a tray. 9 trays go to one event and 13 trays go to another. How many trays remain?",
+      "gold": 16,
+      "direct": {
+        "raw": "25",
+        "answer": 25
+      },
+      "chains": [
+        {
+          "raw": "To determine how many trays remain after distributing the sandwiches, we can follow these steps:\n\n1. **Total number of sandwiches**: The caterer prepares 380 sandwiches.\n\n2. **Number of sandwiches per tray**: Each tray holds 10 sandwiches.\n\n3. **Trays used for events**:\n   - 9 trays are used for one event.\n   - 13 trays are used for another event.\n\n4. **Calculate the total number of sandwiches used**:\n   \\[\n   9 \\text{ trays} \\times 10 \\text{ sandwiches/tray} = 90 \\text{ sandwiches}\n   \\]\n\n5. **Calculate the remaining number of sandwiches**:\n   \\[\n   380 \\text{ sandwiches} - 90 \\text{ sandwiches} = 290 \\text{ sandwiches}\n   \\]\n\n6. **Determine the number of trays needed to pack the remaining sandwiches**:\n   Since each tray holds 10 sandwiches, we divide the remaining number of sandwiches by the number of sandwiches per tray:\n   \\[\n   \\frac{290 \\text{ sandwiches}}{10 \\text{ sandwiches/tray}} = 29 \\text{ trays}\n   \\",
+          "answer": 29
+        },
+        {
+          "raw": "To determine how many trays remain after distributing the sandwiches, we can follow these steps:\n\n1. **Total number of sandwiches**: 380\n\n2. **Number of sandwiches per tray**: 10\n\n3. **Trays used for the first event**:\n   - Number of trays used: 9\n   - Sandwiches per tray: 10\n   - Total sandwiches from the first event: \\( 9 \\times 10 = 90 \\)\n\n4. **Trays used for the second event**:\n   - Number of trays used: 13\n   - Sandwiches per tray: 10\n   - Total sandwiches from the second event: \\( 13 \\times 10 = 130 \\)\n\n5. **Total number of sandwiches distributed**:\n   - Total sandwiches: 380\n   - Sandwiches from the first event: 90\n   - Sandwiches from the second event: 130\n   - Total sandwiches distributed: \\( 90 + 130 = 220 \\)\n\n6. **Trays remaining**:\n   - Initial trays: 10\n   - Trays used in the first event: 9",
+          "answer": 9
+        },
+        {
+          "raw": "To determine how many trays remain after distributing the sandwiches, we can follow these steps:\n\n1. Calculate the total number of sandwiches distributed:\n   - The caterer prepares 380 sandwiches.\n   - 9 trays go to one event.\n   - 13 trays go to another event.\n\n2. Subtract the number of sandwiches used from the total number of sandwiches prepared:\n   \\[\n   380 - (9 + 13) = 380 - 22 = 358\n   \\]\n   So, 358 sandwiches are left to be distributed among the remaining trays.\n\n3. Determine how many trays will receive 10 sandwiches each:\n   - We need to find out how many full sets of 10 trays are needed to distribute all 358 sandwiches.\n   - Divide the total number of sandwiches by 10:\n     \\[\n     358 \\div 10 = 35 \\text{ R } 8\n     \\]\n   - This means that 35 trays will receive 10 sandwiches each, and there will be 8 sandwiches left over.\n\n4. Calculate the total number of trays used for the distribution:\n   - Each tray holds ",
+          "answer": 4
+        },
+        {
+          "raw": "To determine how many trays remain after distributing the sandwiches, we can follow these steps:\n\n1. **Calculate the total number of sandwiches distributed:**\n   - The caterer has prepared 380 sandwiches.\n   - 9 trays go to one event.\n   - 13 trays go to another event.\n\n2. **Determine the total number of sandwiches per tray:**\n   - Each tray holds 10 sandwiches.\n\n3. **Calculate the total number of sandwiches distributed:**\n   \\[\n   \\text{Total sandwiches} = (\\text{Number of trays}) \\times (\\text{Sandwiches per tray})\n   \\]\n   \\[\n   \\text{Total sandwiches} = (9 + 13) \\times 10\n   \\]\n\n4. **Perform the addition inside the parentheses first:**\n   \\[\n   9 + 13 = 22\n   \\]\n\n5. **Multiply the sum by 10:**\n   \\[\n   22 \\times 10 = 220\n   \\]\n\n6. **Determine the remaining number of sandwiches:**\n   - Total sandwiches prepared: 380\n   - Total sandwiches distributed: 220\n\n7",
+          "answer": 7
+        },
+        {
+          "raw": "To determine how many trays remain after distributing the sandwiches, we can follow these steps:\n\n1. **Calculate the total number of sandwiches distributed**:\n   - The caterer packs 10 sandwiches per tray.\n   - There are 9 trays for the first event.\n   - Therefore, the total number of sandwiches distributed is \\( 10 \\times 9 = 90 \\) sandwiches.\n\n2. **Determine the remaining number of sandwiches**:\n   - The total number of sandwiches prepared was 380.\n   - After distributing 90 sandwiches, the number of remaining sandwiches is \\( 380 - 90 = 290 \\).\n\n3. **Calculate the number of trays used for the second event**:\n   - The caterer uses 13 trays for the second event.\n   - Since the total number of sandwiches (290) must be divisible by the number of trays (13), we need to check if 290 is divisible by 13.\n   - Performing the division: \\( 290 \\div 13 = 22.30769230769231 \\).\n   - Since 290 cannot be exactly",
+          "answer": 290
+        },
+        {
+          "raw": "To determine how many trays remain after distributing the sandwiches, we can follow these steps:\n\n1. **Total number of sandwiches**: The caterer prepares 380 sandwiches.\n2. **Number of sandwiches per tray**: Each tray holds 10 sandwiches.\n\nFirst, we need to find out how many sandwiches each tray will hold:\n\\[\n\\text{Number of sandwiches per tray} = \\frac{\\text{Total number of sandwiches}}{\\text{Number of trays per tray}} = \\frac{380}{10} = 38\n\\]\n\nNext, we calculate the total number of sandwiches that go to both events:\n\\[\n\\text{Sandwiches for both events} = 9 \\times 38 = 342\n\\]\n\nNow, we subtract this number from the total number of sandwiches to find out how many are left:\n\\[\n\\text{Sandwiches remaining} = \\text{Total number of sandwiches} - \\text{Sandwiches for both events} = 380 - 342 = 38\n\\]\n\nTherefore, the number of trays that remain is:\n\\[\n\\boxed{38}\n\\]",
+          "answer": 38
+        },
+        {
+          "raw": "To determine how many trays remain after distributing the sandwiches, we need to follow these steps:\n\n1. **Calculate the total number of sandwiches distributed:**\n   - The caterer has 380 sandwiches.\n   - 9 trays are used for one event.\n   - Therefore, \\( 9 \\text{ trays} \\times 10 \\text{ sandwiches per tray} = 90 \\text{ sandwiches} \\).\n\n2. **Determine the number of sandwiches left after distribution:**\n   - Subtract the number of sandwiches used from the total number of sandwiches:\n     \\[\n     380 \\text{ sandwiches} - 90 \\text{ sandwiches} = 290 \\text{ sandwiches}\n     \\]\n\n3. **Calculate the total number of trays used:**\n   - Each tray holds 10 sandwiches.\n   - Since 9 trays were used for the first event and 13 trays were used for the second event, the total number of trays used is:\n     \\[\n     9 + 13 = 22 \\text{ trays}\n     \\]\n\n4. **Determine the number of trays remaining:**\n   - Subtract the total number of trays used from the initial number of trays:\n",
+          "answer": 4
+        },
+        {
+          "raw": "To determine how many trays remain after distributing the sandwiches, we can follow these steps:\n\n1. **Calculate the total number of sandwiches:**\n   - The caterer prepares 380 sandwiches.\n\n2. **Determine the distribution per tray:**\n   - Each tray holds 10 sandwiches.\n\n3. **Calculate the number of sandwiches packed in the first event:**\n   - 9 trays go to the first event.\n   - Total sandwiches for the first event: \\( 9 \\text{ trays} \\times 10 \\text{ sandwiches/tray} = 90 \\text{ sandwiches} \\).\n\n4. **Calculate the number of sandwiches packed in the second event:**\n   - 13 trays go to the second event.\n   - Total sandwiches for the second event: \\( 13 \\text{ trays} \\times 10 \\text{ sandwiches/tray} = 130 \\text{ sandwiches} \\).\n\n5. **Sum up all the sandwiches distributed:**\n   - Total sandwiches from both events: \\( 90 + 130 = 220 \\text{ sandwiches} \\).\n\n6. **Subtract the total number of sandwiches from the initial amount prepared:**\n   - Initial",
+          "answer": 6
+        },
+        {
+          "raw": "To determine how many trays remain after distributing the sandwiches, we can follow these steps:\n\n1. **Total number of sandwiches**: 380\n\n2. **Trays per distribution**: 10\n\n3. **Number of distributions**:\n   - 9 trays go to one event.\n   - 13 trays go to another event.\n\n4. **Calculate total trays used for events**:\n   \\[\n   9 \\text{ trays} + 13 \\text{ trays} = 22 \\text{ trays}\n   \\]\n\n5. **Calculate remaining trays**:\n   \\[\n   380 \\text{ sandwiches} - (9 \\times 10) \\text{ trays used in one event} = 380 \\text{ sandwiches} - 90 \\text{ trays}\n   \\]\n   Simplify the subtraction:\n   \\[\n   380 - 90 = 290\n   \\]\n\n6. **Determine the number of trays remaining**:\n   \\[\n   290 \\text{ trays} - 22 \\text{ trays used in another event} = 268 \\text{ trays}\n   \\]\n\nTherefore, the",
+          "answer": 268
+        }
+      ]
+    }
+  ]
+}

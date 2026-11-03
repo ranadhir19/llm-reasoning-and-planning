@@ -1,0 +1,22 @@
+P2 -- plan, execute, monitor, replan (courier grid)
+
+Original plan: 17 steps (through the middle corridor, cell (2, 5))
+*****....
+*###*##.#
+*#..***#.
+*#.###*#.
+S#...#***
+.###....G
+
+Blind executor: took 10 steps, then its next planned cell (2, 5) was blocked. It has no procedure for this. Delivery FAILED.
+
+Monitor: at step 10, position (2, 4) -- the planned next cell (2, 5) is blocked in the real world (corridor closed). Replanning from the actual position.
+New plan: 11 steps remaining, via the southern bridge.
+
+Monitoring executor: delivery SUCCEEDED in 21 steps (1 replan), versus 17 planned.
++++++....
++###+##.#
++#+++X.#.
++#+###.#.
+S#+++#...
+.###++++G

@@ -1,0 +1,977 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "seed": 1234,
+  "k": 9,
+  "temperature": 0.7,
+  "max_new_tokens": 256,
+  "direct_max_new_tokens": 48,
+  "direct_prompt_suffix": "\nAnswer with just the number.",
+  "cot_prompt_suffix": "\nThink step by step, then finish with the line 'Answer: <number>'.",
+  "problems": [
+    "p01_print_shop",
+    "p02_hall_chairs",
+    "p03_bookbinder",
+    "p04_courier_trips",
+    "p05_theatre_change",
+    "p06_warehouse_bottles",
+    "p07_garden_seedlings",
+    "p08_library_net",
+    "p09_cycling_club",
+    "p10_aquarium_tickets",
+    "p11_farm_cartons",
+    "p12_workshop_chairs",
+    "p13_raffle_boxes",
+    "p14_caterer_trays"
+  ],
+  "n_problems": 14,
+  "r1": {
+    "direct_correct": 0,
+    "single_chain_correct": 6,
+    "n": 14
+  },
+  "r2": {
+    "single_correct": 6,
+    "vote_correct": 9,
+    "n": 14,
+    "k": 9,
+    "vote_rescues": [
+      "p01_print_shop",
+      "p03_bookbinder",
+      "p08_library_net"
+    ]
+  },
+  "r3": {
+    "first_correct": 6,
+    "best_correct": 5,
+    "n_problems": 14,
+    "candidates": 9,
+    "verifier_rescues": []
+  },
+  "unparseable": {
+    "direct": 0,
+    "chains": 0,
+    "chains_total": 126
+  },
+  "per_problem": [
+    {
+      "id": "p01_print_shop",
+      "gold": 3,
+      "direct_answer": 1,
+      "chain_answers": [
+        240,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        6,
+        6
+      ],
+      "single_chain_correct": false,
+      "vote_answer": 3,
+      "vote_votes": 6,
+      "vote_distribution": {
+        "240": 1,
+        "3": 6,
+        "6": 2
+      },
+      "verifier_scores": [
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ]
+      ],
+      "verifier_pick_index": 0,
+      "verifier_pick_answer": 240
+    },
+    {
+      "id": "p02_hall_chairs",
+      "gold": 76,
+      "direct_answer": 20,
+      "chain_answers": [
+        76,
+        76,
+        76,
+        76,
+        76,
+        76,
+        76,
+        5,
+        76
+      ],
+      "single_chain_correct": true,
+      "vote_answer": 76,
+      "vote_votes": 8,
+      "vote_distribution": {
+        "76": 8,
+        "5": 1
+      },
+      "verifier_scores": [
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ]
+      ],
+      "verifier_pick_index": 2,
+      "verifier_pick_answer": 76
+    },
+    {
+      "id": "p03_bookbinder",
+      "gold": 50,
+      "direct_answer": 5,
+      "chain_answers": [
+        212,
+        6,
+        1600,
+        50,
+        4,
+        4800,
+        50,
+        14400,
+        150
+      ],
+      "single_chain_correct": false,
+      "vote_answer": 50,
+      "vote_votes": 2,
+      "vote_distribution": {
+        "212": 1,
+        "6": 1,
+        "1600": 1,
+        "50": 2,
+        "4": 1,
+        "4800": 1,
+        "14400": 1,
+        "150": 1
+      },
+      "verifier_scores": [
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          3
+        ],
+        [
+          false,
+          1
+        ]
+      ],
+      "verifier_pick_index": 7,
+      "verifier_pick_answer": 14400
+    },
+    {
+      "id": "p04_courier_trips",
+      "gold": 4,
+      "direct_answer": 13,
+      "chain_answers": [
+        0,
+        4.095,
+        8,
+        4,
+        104,
+        104,
+        4,
+        4.095,
+        -624
+      ],
+      "single_chain_correct": false,
+      "vote_answer": 4.095,
+      "vote_votes": 2,
+      "vote_distribution": {
+        "0": 1,
+        "4.095": 2,
+        "8": 1,
+        "4": 2,
+        "104": 2,
+        "-624": 1
+      },
+      "verifier_scores": [
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ]
+      ],
+      "verifier_pick_index": 4,
+      "verifier_pick_answer": 104
+    },
+    {
+      "id": "p05_theatre_change",
+      "gold": 244,
+      "direct_answer": 300,
+      "chain_answers": [
+        244,
+        -244,
+        1000,
+        244,
+        244,
+        244,
+        2,
+        244,
+        244
+      ],
+      "single_chain_correct": true,
+      "vote_answer": 244,
+      "vote_votes": 6,
+      "vote_distribution": {
+        "244": 6,
+        "-244": 1,
+        "1000": 1,
+        "2": 1
+      },
+      "verifier_scores": [
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ]
+      ],
+      "verifier_pick_index": 0,
+      "verifier_pick_answer": 244
+    },
+    {
+      "id": "p06_warehouse_bottles",
+      "gold": 1200,
+      "direct_answer": 15,
+      "chain_answers": [
+        225,
+        5,
+        141,
+        240,
+        3,
+        200,
+        240,
+        3750,
+        1
+      ],
+      "single_chain_correct": false,
+      "vote_answer": 240,
+      "vote_votes": 2,
+      "vote_distribution": {
+        "225": 1,
+        "5": 1,
+        "141": 1,
+        "240": 2,
+        "3": 1,
+        "200": 1,
+        "3750": 1,
+        "1": 1
+      },
+      "verifier_scores": [
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ]
+      ],
+      "verifier_pick_index": 1,
+      "verifier_pick_answer": 5
+    },
+    {
+      "id": "p07_garden_seedlings",
+      "gold": 22,
+      "direct_answer": 34,
+      "chain_answers": [
+        22,
+        -1,
+        86,
+        86,
+        22,
+        22,
+        22,
+        22,
+        9
+      ],
+      "single_chain_correct": true,
+      "vote_answer": 22,
+      "vote_votes": 5,
+      "vote_distribution": {
+        "22": 5,
+        "-1": 1,
+        "86": 2,
+        "9": 1
+      },
+      "verifier_scores": [
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ]
+      ],
+      "verifier_pick_index": 2,
+      "verifier_pick_answer": 86
+    },
+    {
+      "id": "p08_library_net",
+      "gold": 161,
+      "direct_answer": 21,
+      "chain_answers": [
+        6,
+        -1,
+        49,
+        161,
+        84,
+        4,
+        161,
+        161,
+        161
+      ],
+      "single_chain_correct": false,
+      "vote_answer": 161,
+      "vote_votes": 4,
+      "vote_distribution": {
+        "6": 1,
+        "-1": 1,
+        "49": 1,
+        "161": 4,
+        "84": 1,
+        "4": 1
+      },
+      "verifier_scores": [
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          3
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ]
+      ],
+      "verifier_pick_index": 5,
+      "verifier_pick_answer": 4
+    },
+    {
+      "id": "p09_cycling_club",
+      "gold": 330,
+      "direct_answer": 95,
+      "chain_answers": [
+        330,
+        6,
+        330,
+        6,
+        330,
+        330,
+        330,
+        6,
+        330
+      ],
+      "single_chain_correct": true,
+      "vote_answer": 330,
+      "vote_votes": 6,
+      "vote_distribution": {
+        "330": 6,
+        "6": 3
+      },
+      "verifier_scores": [
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ]
+      ],
+      "verifier_pick_index": 2,
+      "verifier_pick_answer": 330
+    },
+    {
+      "id": "p10_aquarium_tickets",
+      "gold": 84,
+      "direct_answer": 94,
+      "chain_answers": [
+        84,
+        84,
+        84,
+        6,
+        84,
+        84,
+        84,
+        6,
+        6
+      ],
+      "single_chain_correct": true,
+      "vote_answer": 84,
+      "vote_votes": 6,
+      "vote_distribution": {
+        "84": 6,
+        "6": 3
+      },
+      "verifier_scores": [
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ]
+      ],
+      "verifier_pick_index": 2,
+      "verifier_pick_answer": 84
+    },
+    {
+      "id": "p11_farm_cartons",
+      "gold": 4,
+      "direct_answer": 5,
+      "chain_answers": [
+        6,
+        48,
+        48,
+        48,
+        4,
+        48,
+        11,
+        12,
+        11
+      ],
+      "single_chain_correct": false,
+      "vote_answer": 48,
+      "vote_votes": 4,
+      "vote_distribution": {
+        "6": 1,
+        "48": 4,
+        "4": 1,
+        "11": 2,
+        "12": 1
+      },
+      "verifier_scores": [
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          false,
+          0
+        ]
+      ],
+      "verifier_pick_index": 2,
+      "verifier_pick_answer": 48
+    },
+    {
+      "id": "p12_workshop_chairs",
+      "gold": 5,
+      "direct_answer": 2,
+      "chain_answers": [
+        9,
+        90,
+        0,
+        18,
+        10,
+        90,
+        3,
+        3,
+        18
+      ],
+      "single_chain_correct": false,
+      "vote_answer": 90,
+      "vote_votes": 2,
+      "vote_distribution": {
+        "9": 1,
+        "90": 2,
+        "0": 1,
+        "18": 2,
+        "10": 1,
+        "3": 2
+      },
+      "verifier_scores": [
+        [
+          true,
+          2
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ]
+      ],
+      "verifier_pick_index": 0,
+      "verifier_pick_answer": 9
+    },
+    {
+      "id": "p13_raffle_boxes",
+      "gold": 34,
+      "direct_answer": 13,
+      "chain_answers": [
+        34,
+        34,
+        34,
+        47.5,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "single_chain_correct": true,
+      "vote_answer": 34,
+      "vote_votes": 8,
+      "vote_distribution": {
+        "34": 8,
+        "47.5": 1
+      },
+      "verifier_scores": [
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          true,
+          3
+        ],
+        [
+          true,
+          3
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          true,
+          2
+        ],
+        [
+          true,
+          3
+        ],
+        [
+          true,
+          2
+        ]
+      ],
+      "verifier_pick_index": 2,
+      "verifier_pick_answer": 34
+    },
+    {
+      "id": "p14_caterer_trays",
+      "gold": 16,
+      "direct_answer": 25,
+      "chain_answers": [
+        29,
+        9,
+        4,
+        7,
+        290,
+        38,
+        4,
+        6,
+        268
+      ],
+      "single_chain_correct": false,
+      "vote_answer": 4,
+      "vote_votes": 2,
+      "vote_distribution": {
+        "29": 1,
+        "9": 1,
+        "4": 2,
+        "7": 1,
+        "290": 1,
+        "38": 1,
+        "6": 1,
+        "268": 1
+      },
+      "verifier_scores": [
+        [
+          false,
+          0
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ],
+        [
+          true,
+          1
+        ]
+      ],
+      "verifier_pick_index": 1,
+      "verifier_pick_answer": 9
+    }
+  ]
+}
